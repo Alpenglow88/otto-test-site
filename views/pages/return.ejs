@@ -9,22 +9,25 @@
 </head>
 
 <body>
+    <header class="header sticky sticky--top js-header">
+        <%- include("../partials/header") %>
+    </header>
 
-    <div class="container">
-        <fieldset>
-            </form>
-            <div data_test_automation_id="returned-text"
-                <% if(city === null){ %> <p><%=  %></p>
+    <main>
+        <div class="container">
+            <fieldset>
+                </form>
+                <div data_test_automation_id="returned-text" <% if(city === null){ %> <p><%=  %></p>
                     <% } %>
 
                     <% if(city !== null){ %>
                     <p><%= returnText %></p>
                     <% } %>
-                    </div>
-        </fieldset>
-    </div>
+                </div>
+            </fieldset>
+        </div>
 
-
+    </main>
 </body>
 
 </html>

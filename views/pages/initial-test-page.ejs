@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>oTTo Test Site - Test Pages</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <header class="header sticky sticky--top js-header">
+    <%- include("../partials/header-test-pages") %>
+  </header>
+
+  <main>
+    <div class="container">
+      <fieldset>
+        <form action="/" method="post">
+          <input data_test_automation_id="text-entry-field" name="city" type="text" class="ghost-input"
+            placeholder="Text Entry Field Placeholder Text" required>
+          <input data_test_automation_id="submit-button" type="submit" class="ghost-button" value="Submit">
+        </form>
+      </fieldset>
+    </div>
+
+    <div class="container">
+      <fieldset>
+        <form action="/waiting">
+          <input data_test_automation_id="waiting-button" type="submit" class="ghost-button"
+            value="Waiting for something?" href="/waiting">
+        </form>
+      </fieldset>
+    </div>
+
+  </main>
+</body>
+
+</html>

@@ -15,7 +15,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Sets root routing and defines what is seen there
 app.get('/', function (req, res) {
-  res.render('index');
+  res.render('pages/landing-page');
+});
+
+app.get('/index', function (req, res) {
+  res.render('pages/index');
 });
 
 // app.post('/', function (req, res) {
@@ -23,33 +27,29 @@ app.get('/', function (req, res) {
 // })
 
 app.get('/initial-test-page', function (req, res) {
-  res.render('initial-test-page');
-});
-
-app.get('/index', function (req, res) {
-  res.render('test-app');
+  res.render('pages/initial-test-page');
 });
 
 app.get('/waiting', function (req, res) {
-  res.render('waiting');
+  res.render('pages/waiting');
 });
 
 app.get('/test', function (req, res) {
-  res.render('waiting');
+  res.render('pages/waiting');
 });
 
 
-app.post('/index', function (req, res) {
-    let city = req.body.city;
+// app.post('/index', function (req, res) {
+//     let city = req.body.city;
 
-    if(city === 'Cape Town'){
-        let passingReturnText = `Bravo, ${city} is correct`
-        res.render('return', {city: city, returnText: passingReturnText});
-    } else {
-        let failingReturnText = `${city} is not Cape Town :(`
-        res.render('return', {city: city, returnText: failingReturnText});
-        }
-})
+//     if(city === 'Cape Town'){
+//         let passingReturnText = `Bravo, ${city} is correct`
+//         res.render('return', {city: city, returnText: passingReturnText});
+//     } else {
+//         let failingReturnText = `${city} is not Cape Town :(`
+//         res.render('return', {city: city, returnText: failingReturnText});
+//         }
+// })
 
 // Sets application to be on port 3000
 app.listen(3000, function () {
