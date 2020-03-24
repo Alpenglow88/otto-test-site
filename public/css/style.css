@@ -123,13 +123,6 @@ html {
   height: 100%;
 }
 
-/* body {
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.75;
-  margin: 0;
-  min-height: 100%;
-} */
-
 /* layout/header.css */
 
 .header {
@@ -169,12 +162,6 @@ html {
   padding-bottom: 6em;
 }
 
-/* modules/headline.css */
-
-/* h1 {
-  margin-bottom: 1.5em;
-  margin-top: 0;
-} */
 
 /* modules/navigation.css */
 
@@ -206,6 +193,11 @@ html {
   margin: 1.5em;
 }
 
+.version {
+  text-align: right;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10px;
+}
 /* modules/paragraph.css */
 
 /* p {

@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const package = require('./package.json');
+
+const version = package.version
 
 // Exposes css from public folder to Express
 app.use(express.static('public'));
@@ -15,11 +18,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Sets root routing and defines what is seen there
 app.get('/', function (req, res) {
-  res.render('pages/landing-page');
+  res.render('pages/landing-page', {version: version});
 });
 
 app.get('/index', function (req, res) {
-  res.render('pages/index');
+  res.render('pages/index', {version: version});
 });
 
 // app.post('/', function (req, res) {
@@ -27,15 +30,15 @@ app.get('/index', function (req, res) {
 // })
 
 app.get('/initial-test-page', function (req, res) {
-  res.render('pages/initial-test-page');
+  res.render('pages/initial-test-page', {version: version});
 });
 
 app.get('/waiting', function (req, res) {
-  res.render('pages/waiting');
+  res.render('pages/waiting', {version: version});
 });
 
 app.get('/test', function (req, res) {
-  res.render('pages/waiting');
+  res.render('pages/waiting', {version: version});
 });
 
 
