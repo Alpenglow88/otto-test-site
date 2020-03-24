@@ -18,7 +18,28 @@ app.get('/', function (req, res) {
   res.render('index');
 });
 
-app.post('/', function (req, res) {
+// app.post('/', function (req, res) {
+//     res.render('initial-test-page')
+// })
+
+app.get('/initial-test-page', function (req, res) {
+  res.render('initial-test-page');
+});
+
+app.get('/index', function (req, res) {
+  res.render('test-app');
+});
+
+app.get('/waiting', function (req, res) {
+  res.render('waiting');
+});
+
+app.get('/test', function (req, res) {
+  res.render('waiting');
+});
+
+
+app.post('/index', function (req, res) {
     let city = req.body.city;
 
     if(city === 'Cape Town'){
@@ -29,11 +50,6 @@ app.post('/', function (req, res) {
         res.render('return', {city: city, returnText: failingReturnText});
         }
 })
-
-app.get('/waiting', function (req, res) {
-  res.render('waiting');
-});
-
 
 // Sets application to be on port 3000
 app.listen(3000, function () {

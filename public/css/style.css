@@ -12,6 +12,10 @@ body {
     width: 600px;
     margin: 0 auto;
   }
+  .img-container {
+    width: 450px;
+    margin: 0 auto;
+  }
   fieldset {
     display: block;
     -webkit-margin-start: 0px;
@@ -71,4 +75,7 @@ body {
   }
   p {
     color: #E64A19;
+  }
+  h1 {
+    text-align: center;
   }
