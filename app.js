@@ -29,8 +29,12 @@ app.get('/index', function (req, res) {
 //     res.render('initial-test-page')
 // })
 
-app.get('/initial-test-page', function (req, res) {
-  res.render('pages/initial-test-page', {version: version});
+app.get('/test-pages-home', function (req, res) {
+  res.render('pages/test_pages/test-pages-home', {version: version});
+});
+
+app.get('/about', function (req, res) {
+  res.render('pages/about-page', {version: version});
 });
 
 app.get('/waiting', function (req, res) {
