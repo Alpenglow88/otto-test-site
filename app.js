@@ -45,6 +45,10 @@ app.get('/test', function (req, res) {
   res.render('pages/waiting', {version: version});
 });
 
+app.get('/otto-tool', function (req, res) {
+  res.render('pages/otto-tool-page', {version: version});
+});
+
 
 // app.post('/index', function (req, res) {
 //     let city = req.body.city;
