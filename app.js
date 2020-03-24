@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const package = require('./package.json');
-
 const version = package.version
 
 // Exposes css from public folder to Express
