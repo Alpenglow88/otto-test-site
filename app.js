@@ -16,35 +16,35 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 // Sets root routing and defines what is seen there
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
   res.render('pages/landing-page', {version: version});
 });
 
-app.get('/index', function (req, res) {
+app.get('/index', (req, res) => {
   res.render('pages/index', {version: version});
 });
 
-// app.post('/', function (req, res) {
+// app.post('/', (req, res) => {
 //     res.render('initial-test-page')
 // })
 
-app.get('/test-pages-home', function (req, res) {
+app.get('/test-pages-home', (req, res) => {
   res.render('pages/test_pages/test-pages-home', {version: version});
 });
 
-app.get('/about', function (req, res) {
+app.get('/about', (req, res) => {
   res.render('pages/about-page', {version: version});
 });
 
-app.get('/waiting', function (req, res) {
+app.get('/waiting', (req, res) => {
   res.render('pages/waiting', {version: version});
 });
 
-app.get('/test', function (req, res) {
+app.get('/test', (req, res) => {
   res.render('pages/waiting', {version: version});
 });
 
-app.get('/otto-tool', function (req, res) {
+app.get('/otto-tool', (req, res) => {
   res.render('pages/otto-tool-page', {version: version});
 });
 
@@ -61,7 +61,8 @@ app.get('/otto-tool', function (req, res) {
 //         }
 // })
 
-// Sets application to be on port 3000
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+// Sets application to be on port 3000 or dynamic port assigned from heroku
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Our app is running on port ${ PORT }`);
 });
