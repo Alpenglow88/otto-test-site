@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>oTTo Test Site - Test Pages template</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <header class="header sticky sticky--top js-header">
+    <%- include("../../partials/header-test-pages") %>
+  </header>
+
+  <main>
+
+
+    <div class="container">
+      <div data_test_automation_id="what_is_this_heading">
+        <h2>Welcome to the test pages home area</h2>
+      </div>
+
+      <div class="body-wide" data_test_automation_id="about_what_is_this_text" <p>
+        <br>
+        This is where many of the elements and scenarios are that you will use to test against.
+        <br>
+        <br>
+        Some of the elements may require you to click through to other ares or have designated pages of their own but
+        this is the starting point for most of the testing that you may want to do to start with.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <fieldset>
+        <form action="/return" method="post">
+          <input data_test_automation_id="text-entry-field" name="city" type="text" class="ghost-input"
+            placeholder="Text Entry Field Placeholder Text" required>
+          <input data_test_automation_id="submit-button" type="submit" class="ghost-button" value="Submit">
+        </form>
+      </fieldset>
+    </div>
+
+    <div class="container">
+      <fieldset>
+        <div data_test_automation_id="button_click_information_text">
+          <h2>Verify a button click by clicking the button below</h2>
+        </div>
+        <form action="/success-button-click">
+          <input data_test_automation_id="generic-button" type="submit" class="ghost-button"
+            value="Click this button" href="/success-button-click">
+        </form>
+      </fieldset>
+    </div>
+
+  </main>
+
+  <footer>
+    <%- include("../../partials/footer") %>
+  </footer>
+</body>
+
+</html>

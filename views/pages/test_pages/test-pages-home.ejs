@@ -14,24 +14,63 @@
   </header>
 
   <main>
+
+
     <div class="container">
-      <fieldset>
-        <form action="/" method="post">
-          <input data_test_automation_id="text-entry-field" name="city" type="text" class="ghost-input"
-            placeholder="Text Entry Field Placeholder Text" required>
-          <input data_test_automation_id="submit-button" type="submit" class="ghost-button" value="Submit">
-        </form>
-      </fieldset>
+      <div data_test_automation_id="Welcome_test_home_text">
+        <h1>Welcome to the test pages home area</h1>
+      </div>
+
+      <div class="body-wide" data_test_automation_id="about_what_is_this_text" <p>
+        <br>
+        This is where many of the elements and scenarios are that you will use to test against.
+        <br>
+        <br>
+        Some of the elements may require you to click through to other ares or have designated pages of their own but
+        this is the starting point for most of the testing that you may want to do to start with.
+        </p>
+      </div>
     </div>
 
     <div class="container">
       <fieldset>
-        <form action="/waiting">
-          <input data_test_automation_id="waiting-button" type="submit" class="ghost-button"
-            value="Waiting for something?" href="/waiting">
+        <div data_test_automation_id="button_click_information_heading">
+          <h1>Button click</h1>
+        </div>
+        <form action="/success-button-click">
+          <input data_test_automation_id="generic-button" type="submit" class="ghost-button" value="Click this button"
+            href="/success-button-click" title="Verify a button click by aiming at this button">
         </form>
       </fieldset>
     </div>
+
+
+    <div class="container">
+      <fieldset>
+        <div data_test_automation_id="test_entry_field_information_heading">
+          <h1>Text entry field with placeholder text</h1>
+        </div>
+        <div data_test_automation_id="test_entry_field_information_text"
+          <p>Below is a text entry field complete with placeholder text. Use this to verify both text entry as well as the text that is used the placeholder
+            <br>
+            <br>
+            There is also a submit button which can be used to verify correct behaviour on submission of text. This button will simply open a "Success!" page along with the text that you have entered in the text entry field
+          </p>
+        </div>
+        <form action="/success-text-entry" method="post">
+          <input data_test_automation_id="text-entry-field" name="text_entry" type="text" class="ghost-input"
+            placeholder="Text Entry Field Placeholder Text" required>
+          <input data_test_automation_id="submit-button" type="submit" class="ghost-button" value="Submit text entry value">
+        </form>
+      </fieldset>
+    </div>
+
+
+
+
+
+
+
 
   </main>
 
