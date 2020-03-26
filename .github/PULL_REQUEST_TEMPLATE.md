@@ -9,6 +9,3 @@
 **Did you update the documentation?**
 
 
-
-**Did you check Rubocop?**
-
