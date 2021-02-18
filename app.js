@@ -53,6 +53,10 @@ app.get('/success-button-click', (req, res) => {
   res.render('pages/success-button-click', { version: version })
 })
 
+app.get('/text-entry-field', (req, res) => {
+  res.render('pages/test_pages/test-page-text-entry-field', { version: version })
+})
+
 app.post('/success-text-entry', (req, res) => {
   let text = req.body.text_entry
     res.render('pages/test_pages/test-page-text-entry-success', {version: version, text: text})
