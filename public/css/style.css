@@ -317,4 +317,8 @@ html {
   display: block;
 }
 
-
+.anchor {
+  display: block;
+  position: relative;
+  scroll-margin-top: 2em;
+}
