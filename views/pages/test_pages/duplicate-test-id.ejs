@@ -3,15 +3,14 @@
 
 <head>
     <meta charset="utf-8">
-    <title>oTTo Test Site</title>
+    <title>oTTo Test Site - Test Pages template</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
-    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 </head>
 
 <body>
     <header class="header sticky sticky--top js-header">
-        <%- include("../partials/header-playground") %>
+        <%- include("../../partials/header-test-pages") %>
     </header>
 
     <main>
@@ -23,12 +22,13 @@
             </div>
 
             <div class="body-wide" data_test_automation_id="about_duplicate_test_id_text" <p>
-                <br>
-                This is a page where some of the elements have duplicated 'data_test_automation_test_id' values
+                Each element in the two banks below have 'data_test_automation_id' values however some of them have been
+                duplicated on more than one element
+                <br><br>
+                There are also 3 buttons that will link out to images. Try to click on the Image of Ariel button
                 </p>
             </div>
         </div>
-
 
         <div class="container" data_test_automation_id="bank_1">
             <fieldset>
@@ -60,10 +60,30 @@
             </fieldset>
         </div>
 
+        <div class="container">
+            <p> Links to images</p>
+            <br><br>
+            <form action="/totoro">
+                <input data_test_automation_id="ariel_image_btn" type="submit" class="ghost-button"
+                    value="Image of Totoro" href="/totoro" title="Image of Totoro">
+                <br><br>
+            </form>
+            <form action="/ariel">
+                <input data_test_automation_id="ariel_image_btn" type="submit" class="ghost-button"
+                    value="Image of Ariel" href="/ariel" title="Image of Ariel">
+                <br><br>
+            </form>
+            <form action="/dredd">
+                <input data_test_automation_id="dredd_image_btn" type="submit" class="ghost-button"
+                    value="Image of Judge Dredd" href="/dredd" title="Image of Judge Dredd">
+                <br><br>
+            </form>
+        </div>
+
     </main>
 
     <footer>
-        <%- include("../partials/footer") %>
+        <%- include("../../partials/footer") %>
     </footer>
 </body>
 

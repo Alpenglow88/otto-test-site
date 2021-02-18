@@ -17,7 +17,7 @@
 
 
     <div class="container">
-      <div data_test_automation_id="Welcome_test_home_text">
+      <div data_test_automation_id="welcome_test_home_text">
         <h1>Welcome to the test pages home area</h1>
       </div>
 
@@ -42,7 +42,7 @@
           </p>
         </div>
         <form action="/success-button-click">
-          <input data_test_automation_id="generic-button" type="submit" class="ghost-button" value="Click this button"
+          <input data_test_automation_id="generic-button" type="submit" class="ghost-button" value="Test button click"
             href="/success-button-click" title="Verify a button click by clicking this button">
         </form>
       </fieldset>
@@ -59,7 +59,7 @@
         </div>
         <form action="/text-entry-field">
           <input data_test_automation_id="enter-text-entry-field-button" type="submit" class="ghost-button"
-            value="I want to test text entry fields" href="/text-entry-field"
+            value="Test text entry fields" href="/text-entry-field"
             title="Verify text entry field behaviour by clicking this button">
         </form>
       </fieldset>
@@ -76,8 +76,25 @@
         </div>
         <form action="/dropdown-menu">
           <input data_test_automation_id="enter-dropdown-menu-button" type="submit" class="ghost-button"
-            value="I want to test dropdown menus" href="/dropdown-menu"
+            value="Test dropdown menus" href="/dropdown-menu"
             title="Verify dropdown menu behaviour by clicking this button">
+        </form>
+      </fieldset>
+    </div>
+
+    <div class="container">
+      <fieldset>
+        <div data_test_automation_id="duplicate_id_information_heading">
+          <h1>Duplicated 'test_id'</h1>
+        </div>
+        <div class="body-wide" data_test_automation_id="duplicate_id_info" <p>
+          This page will allow you to test elements that have duplicated test IDs
+          </p>
+        </div>
+        <form action="/duplicate-id">
+          <input data_test_automation_id="enter-duplicate-id-menu-button" type="submit" class="ghost-button"
+            value="Test duplicated test IDs" href="/duplicate-id"
+            title="Verify testing duplicated test IDs by clicking this button">
         </form>
       </fieldset>
     </div>
