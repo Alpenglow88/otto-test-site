@@ -95,6 +95,12 @@ app.get("/dredd", (req, res) => {
   });
 });
 
+app.get("/contact", (req, res) => {
+  res.render("pages/contact-us-page", {
+    version: version,
+  });
+});
+
 // Sets application to be on port 3000 or dynamic port assigned from Heroku
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
