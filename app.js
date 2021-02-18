@@ -25,8 +25,8 @@ app.get("/playground", (req, res) => {
   res.render("pages/playground-page", { version: version });
 });
 
-app.get("/test-pages-home", (req, res) => {
-  res.render("pages/test_pages/test-pages-home", { version: version });
+app.get("/home", (req, res) => {
+  res.render("pages/test_pages/home", { version: version });
 });
 
 app.get("/about", (req, res) => {
@@ -58,21 +58,21 @@ app.get("/success-button-click", (req, res) => {
 });
 
 app.get("/text-entry-field", (req, res) => {
-  res.render("pages/test_pages/test-page-text-entry-field", {
+  res.render("pages/test_pages/text-entry-field", {
     version: version,
   });
 });
 
 app.post("/success-text-entry", (req, res) => {
   let text = req.body.text_entry;
-  res.render("pages/test_pages/test-page-text-entry-success", {
+  res.render("pages/test_pages/text-entry-success", {
     version: version,
     text: text,
   });
 });
 
 app.get("/dropdown-menu", (req, res) => {
-  res.render("pages/test_pages/test-page-dropdown-menus", {
+  res.render("pages/test_pages/dropdown-menus", {
     version: version,
   });
 });
@@ -107,7 +107,7 @@ app.listen(PORT, () => {
   console.log(`The app is running on port ${PORT}`);
 });
 
-// app.post('/test-pages-home', function (req, res) {
+// app.post('/home', function (req, res) {
 //     let city = req.body.city;
 
 //     if(city === 'Cape Town'){
@@ -119,6 +119,6 @@ app.listen(PORT, () => {
 //         }
 // })
 
-// app.post('/test-pages-home', (req, res) => {
+// app.post('/home', (req, res) => {
 //     res.render('pages/return')
 // })
