@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>oTTo Test Site - Test Pages Home</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <header class="header sticky sticky--top js-header">
+        <%- include("../../partials/header-test-pages") %>
+    </header>
+
+    <main>
+
+        <div class="container">
+            <fieldset>
+                <div data_test_automation_id="dropdown_menu_information_heading">
+                    <h1>Dropdown Menus</h1>
+                </div>
+                <div data_test_automation_id="test_entry_field_information_text" <p>Below is a dropdown menu with 3
+                    options. Each option will link to an image and text page
+                    <br>
+                    <br>
+                    Use this to verify dropdown menu behaviour
+                    </p>
+                </div>
+
+                <div class="container">
+                    <div class="dropdown">
+                        <button data_test_automation_id="dropdown_button" class="ghost-button">Dropdown</button>
+                        <div class="dropdown-content">
+                            <a data_test_automation_id="first-dropdown-item" href="/totoro">Totoro</a>
+                            <a data_test_automation_id="second-dropdown-item" href="/ariel">Ariel</a>
+                            <a data_test_automation_id="third-dropdown-item" href="/dredd">Judge Dredd</a>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+    </main>
+
+    <footer>
+        <%- include("../../partials/footer") %>
+    </footer>
+</body>
+
+</html>

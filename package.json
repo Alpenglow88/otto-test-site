@@ -1,6 +1,6 @@
 {
   "name": "otto_test_site",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "",
   "engines": {
     "node": "10.15.3"
@@ -10,9 +10,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-dev": "nodemon app.js",
     "start": "node app.js",
-    "commit-code": "git add -A && git commit -m 'Release commit for Version 1.1.0' && git push",
+    "commit-code": "git add -A && git commit -m 'Release commit for Version 1.2.0' && git push",
     "deploy-to-heroku": "git push heroku master",
-    "full_deploy": "npm run commit-code && npm run deploy-to-heroku"
+    "full-deploy": "npm run commit-code && npm run deploy-to-heroku"
   },
   "author": "Ian Goddard",
   "license": "ISC",

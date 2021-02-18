@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>oTTo Test Site - Test Pages Home</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <header class="header sticky sticky--top js-header">
+    <%- include("../../../partials/header-test-pages") %>
+  </header>
+
+
+  <main>
+
+    <div data_test_automation_id="dredd_heading">
+      <h1>He is the law!</h1>
+    </div>
+
+    <div class="landing-img-container">
+      <br>
+      <a href="/test-pages-home">
+        <img class="centre" src="/assets/dredd.png" alt="Dredd img" width="650" height="700"
+          data_test_automation_id="dredd_img" Title="Click to return to test pages home">
+    </div>
+    </a>
+
+
+  </main>
+
+  <footer>
+    <%- include("../../../partials/footer") %>
+  </footer>
+</body>
+
+</html>

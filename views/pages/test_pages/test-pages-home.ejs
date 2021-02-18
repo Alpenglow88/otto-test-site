@@ -21,7 +21,7 @@
         <h1>Welcome to the test pages home area</h1>
       </div>
 
-      <div class="body-wide" data_test_automation_id="about_what_is_this_text" <p>
+      <div class="body-wide" data_test_automation_id="test-pages_what_is_this_text" <p>
         <br>
         This is where many of the elements and scenarios are that you will use to test against.
         <br>
@@ -37,6 +37,10 @@
         <div data_test_automation_id="button_click_information_heading">
           <h1>Button click</h1>
         </div>
+        <div class="body-wide" data_test_automation_id="button_click_info" <p>
+          This button will allow you to test click methods
+          </p>
+        </div>
         <form action="/success-button-click">
           <input data_test_automation_id="generic-button" type="submit" class="ghost-button" value="Click this button"
             href="/success-button-click" title="Verify a button click by clicking this button">
@@ -46,19 +50,37 @@
 
     <div class="container">
       <fieldset>
-        <div data_test_automation_id="button_click_information_heading">
+        <div data_test_automation_id="text_entry_information_heading">
           <h1>Text Entry Field</h1>
         </div>
+        <div class="body-wide" data_test_automation_id="text_entry_info" <p>
+          This page will allow you to test text entry methods
+          </p>
+        </div>
         <form action="/text-entry-field">
-          <input data_test_automation_id="enter-text-entry-field-button" type="submit" class="ghost-button" value="I want to test text entry fields"
-            href="/text-entry-field" title="Verify text entry field behaviour by clicking this button">
+          <input data_test_automation_id="enter-text-entry-field-button" type="submit" class="ghost-button"
+            value="I want to test text entry fields" href="/text-entry-field"
+            title="Verify text entry field behaviour by clicking this button">
         </form>
       </fieldset>
     </div>
 
-
-
-
+    <div class="container">
+      <fieldset>
+        <div data_test_automation_id="dropdown_menu_information_heading">
+          <h1>Dropdown Menu</h1>
+        </div>
+        <div class="body-wide" data_test_automation_id="dropdown_info" <p>
+          This page will allow you to test dropdown checking methods
+          </p>
+        </div>
+        <form action="/dropdown-menu">
+          <input data_test_automation_id="enter-dropdown-menu-button" type="submit" class="ghost-button"
+            value="I want to test dropdown menus" href="/dropdown-menu"
+            title="Verify dropdown menu behaviour by clicking this button">
+        </form>
+      </fieldset>
+    </div>
 
   </main>
 
