@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Testing API Data</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+</head>
+
+<body>
+    <header class="header sticky sticky--top js-header">
+        <%- include("../../partials/header-test-pages") %>
+    </header>
+
+    <main>
+
+
+        <div class="container">
+            <div data_test_automation_id="test_api_data_heading">
+                <h2>Testing API Data</h2>
+            </div>
+
+            <div class="body-wide" data_test_automation_id="about_test_api_data_text" <p>
+                On this page there is information about a film that has been taken from an official API source (simple
+                GET request). Using this page as your site under test, contact the API endpoint listed below and verify
+                the contents of this page are correct as per the information received back from the API (some bits
+                of information are incorrect!)
+                <br><br>
+                When you first contact the API end point, some of the fields may return another API endpoint. This will
+                need you to make further api calls in your tests in order to verify the information. These fields are
+                marked with an icon - <span class="iconify" data-icon="gg:danger" data-inline="true"></span>
+                <br><br>
+                The end point used is listed below</p>
+            </div>
+        </div>
+
+        <div class="container" data_test_automation_id="film_information">
+            <fieldset>
+                <div>Title:
+                </div>
+                <div data_test_automation_id="film_title">Princess Mononoke
+                </div>
+                <br>
+                <div>Description:
+                </div>
+                <div data_test_automation_id="film_description">The orphan Sheeta inherited a mysterious crystal that
+                    links her to the mythical sky-kingdom of Laputa. With the help of resourceful Pazu and a rollicking
+                    band of sky pirates, she makes her way to the ruins of the once-great civilization. Sheeta and Pazu
+                    must outwit the evil Muska, who plans to use Laputa's science to make himself ruler of the world.
+                </div>
+                <br>
+                <div>Director:
+                </div>
+                <div data_test_automation_id="film_director">Hayao Miyazaki
+                </div>
+                <br>
+                <div>Producer:
+                </div>
+                <div data_test_automation_id="film_producer">Isao Takahata
+                </div>
+                <br>
+                <div>Release Year:
+                </div>
+                <div data_test_automation_id="film_release_year">1997
+                </div>
+                <br>
+                <div><span class="iconify" data-icon="gg:danger" data-inline="true"></span> Characters:
+                </div>
+                <ul class="film_characters" data_test_automation_id="film_characters_list">
+                    <li id="characters">Ashitaka</li>
+                    <li id="characters">San</li>
+                    <li id="characters">Yakul</li>
+                    <li id="characters">Shishigami</li>
+                    <li id="characters">General Muoro</li>
+                    <li id="characters">Eboshi</li>
+                    <li id="characters">Jigo</li>
+                    <li id="characters">Pazu</li>
+                    <li id="characters">Gonza</li>
+                    <li id="characters">Hii-sama</li>
+                </ul>
+                <br>
+                <div><span class="iconify" data-icon="gg:danger" data-inline="true"></span> Species:
+                </div>
+                <ul class="film_species" data_test_automation_id="film_species_list">
+                    <li id="species">Human</li>
+                    <li id="species">Deer</li>
+                    <li id="species">Spirit</li>
+                </ul>
+
+            </fieldset>
+        </div>
+
+        <div class="container" data_test_automation_id="initial_api_url">
+            <div>API Endpoint</div>
+            https://ghibliapi.herokuapp.com/films/0440483e-ca0e-4120-8c50-4c8cd9b965d6
+            <br>
+        </div>
+    </main>
+
+    <footer>
+        <%- include("../../partials/footer") %>
+    </footer>
+</body>
+
+</html>

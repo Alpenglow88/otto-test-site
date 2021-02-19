@@ -113,6 +113,12 @@ app.get("/no-test-id", (req, res) => {
   });
 });
 
+app.get("/test-api-data", (req, res) => {
+  res.render("pages/test_pages/test-api-data", {
+    version: version,
+  });
+});
+
 // Sets application to be on port 3000 or dynamic port assigned from Heroku
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
