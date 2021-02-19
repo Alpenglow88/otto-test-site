@@ -1,6 +1,6 @@
 {
   "name": "otto_test_site",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "",
   "engines": {
     "node": "12.14.1"
@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-dev": "nodemon app.js",
     "start": "node app.js",
-    "commit-code": "git add -A && git commit -m 'Release commit for Version 1.2.5' && git push",
+    "commit-code": "git add -A && git commit -m 'Release commit for Version 1.2.6' && git push",
     "deploy-to-heroku": "git push heroku master",
     "full-deploy": "npm run commit-code && npm run deploy-to-heroku"
   },
