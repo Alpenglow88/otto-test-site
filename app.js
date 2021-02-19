@@ -37,6 +37,10 @@ app.get("/waiting", (req, res) => {
   res.render("pages/waiting", { version: version });
 });
 
+app.get("/faq", (req, res) => {
+  res.render("pages/faq", { version: version });
+});
+
 app.get("/test", (req, res) => {
   res.render("pages/waiting", { version: version });
 });
