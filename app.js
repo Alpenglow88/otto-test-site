@@ -22,7 +22,7 @@ app.get("/index", (req, res) => {
 });
 
 app.get("/playground", (req, res) => {
-  res.render("pages/playground-page", { version: version });
+  res.render("pages/playground", { version: version });
 });
 
 app.get("/home", (req, res) => {
@@ -30,7 +30,7 @@ app.get("/home", (req, res) => {
 });
 
 app.get("/about", (req, res) => {
-  res.render("pages/about-page", { version: version });
+  res.render("pages/about", { version: version });
 });
 
 app.get("/waiting", (req, res) => {
@@ -46,11 +46,15 @@ app.get("/test", (req, res) => {
 });
 
 app.get("/otto-tool", (req, res) => {
-  res.render("pages/otto-tool-page", { version: version });
+  res.render("pages/otto-tool", { version: version });
 });
 
 app.get("/lessons", (req, res) => {
-  res.render("pages/lessons-page", { version: version });
+  res.render("pages/lessons", { version: version });
+});
+
+app.get("/video-playback", (req, res) => {
+  res.render("pages/video-playback", { version: version });
 });
 
 app.get("/return", (req, res) => {
@@ -100,7 +104,7 @@ app.get("/dredd", (req, res) => {
 });
 
 app.get("/contact", (req, res) => {
-  res.render("pages/contact-us-page", {
+  res.render("pages/contact-us", {
     version: version,
   });
 });
