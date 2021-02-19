@@ -20,6 +20,10 @@ body {
     width: 850px;
     margin: 0 auto;
   }
+  .contact-container {
+    width: 225px;
+    margin: 5 auto;
+  }
   fieldset {
     display: block;
     -webkit-margin-start: 0px;
