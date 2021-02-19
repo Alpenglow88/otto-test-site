@@ -129,7 +129,25 @@
         </div>
         <form action="/no-test-id">
           <input data_test_automation_id="enter-no-test-id-menu-button" type="submit" class="ghost-button"
-            value="Test no test IDs" href="/duplicate-id"
+            value="Test no test IDs" href="/no-test-id"
+            title="Verify testing no test ID selectors by clicking this button">
+        </form>
+      </fieldset>
+    </div>
+
+    <div class="container">
+      <fieldset>
+        <div data_test_automation_id="test_api_data_information_heading">
+          <a id='test_api_data'></a>
+          <h1>Verifying data from an API</h1>
+        </div>
+        <div class="body-wide" data_test_automation_id="duplicate_id_info" <p>
+          This page will allow you to test if information gathered from an API is correctly represented on a page
+          </p>
+        </div>
+        <form action="/test-api-data">
+          <input data_test_automation_id="test-api-data-menu-button" type="submit" class="ghost-button"
+            value="Test API data on page" href="/test-api-data"
             title="Verify testing no test ID selectors by clicking this button">
         </form>
       </fieldset>
