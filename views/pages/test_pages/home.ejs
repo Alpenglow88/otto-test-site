@@ -26,7 +26,7 @@
         <br>
         <br>
         Some of the elements may require you to click through to other ares or have designated pages of their own but
-        this is the starting point for most of the testing that you may want to do to start with.
+        this is the starting point for much of the testing that you may want to do to start with.
         </p>
       </div>
     </div>
@@ -41,6 +41,9 @@
           <li><a href="#duplicated_ids" data_test_automation_id="content_link_duplicated_id">Duplicated Test ID
               Selectors</a></li>
           <li><a href="#no_test_ids" data_test_automation_id="content_link_no_test_id">No Test ID Selectors</a>
+          </li>
+          <li><a href="#non_visible_elements" data_test_automation_id="content_link_non_visible_elements">Test
+              Non-Visible Elements</a>
           </li>
           <li><a href="#test_api_data" data_test_automation_id="content_link_test_api_data">Test API Response Data</a>
           </li>
@@ -126,7 +129,7 @@
           <a id='no_test_ids'></a>
           <h1>No 'test_id' Selectors</h1>
         </div>
-        <div class="body-wide" data_test_automation_id="duplicate_id_info" <p>
+        <div class="body-wide" data_test_automation_id="no_test_id_info" <p>
           This page will allow you to test elements that have no dedicated test ID selector
           </p>
         </div>
@@ -140,11 +143,29 @@
 
     <div class="container">
       <fieldset>
+        <div data_test_automation_id="non_visible_elements_information_heading">
+          <a id='non_visible_elements'></a>
+          <h1>Non-Visible Elements</h1>
+        </div>
+        <div class="body-wide" data_test_automation_id="non_visible_elements_info" <p>
+          This page has both visible and non visible elements
+          </p>
+        </div>
+        <form action="/non-visible-elements">
+          <input data_test_automation_id="non-visible-elements-menu-button" type="submit" class="ghost-button"
+            value="Test non visible elements" href="/non-visible-elements"
+            title="Verify non visible elements by clicking this button">
+        </form>
+      </fieldset>
+    </div>
+
+    <div class="container">
+      <fieldset>
         <div data_test_automation_id="test_api_data_information_heading">
           <a id='test_api_data'></a>
           <h1>Verifying data from an API</h1>
         </div>
-        <div class="body-wide" data_test_automation_id="duplicate_id_info" <p>
+        <div class="body-wide" data_test_automation_id="test_api_data_info" <p>
           This page will allow you to test if information gathered from an API is correctly represented on a page
           </p>
         </div>

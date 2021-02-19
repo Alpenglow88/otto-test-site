@@ -12,6 +12,11 @@ body {
     width: 600px;
     margin: 0 auto;
   }
+  .container-invisible{
+    visibility: hidden;
+    width: 600px;
+    margin: 0 auto;
+  }
   .img-container {
     width: 450px;
     margin: 0 auto;

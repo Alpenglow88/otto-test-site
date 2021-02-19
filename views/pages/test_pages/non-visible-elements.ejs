@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Testing Non-Visible Elements</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <header class="header sticky sticky--top js-header">
+        <%- include("../../partials/header-test-pages") %>
+    </header>
+
+    <main>
+
+
+        <div class="container">
+            <div data_test_automation_id="non_visible_elements_heading">
+                <h2>Non-Visible Elements</h2>
+            </div>
+
+            <div class="body-wide" data_test_automation_id="about_non_visible_elements_text" <p>
+                There are 3 buttons on this page but one of them is not visible.
+                <br><br>
+                </p>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <form action="/totoro">
+                <input data_test_automation_id="totoro_image_btn" type="submit" class="ghost-button"
+                    value="Image of Totoro" href="/totoro" title="Image of Totoro">
+                <br><br>
+            </form>
+        </div>
+        <div class="container">
+            <form action="/walle">
+                <input class="container-invisible" data_test_automation_id="walle_image_btn" type="submit"
+                    class="ghost-button" value="Image of Wall. E" href="/walle" title="Image of Wall. E">
+                <br><br>
+            </form>
+        </div>
+        <div class="container">
+            <form action="/dredd">
+                <input data_test_automation_id="dredd_image_btn" type="submit" class="ghost-button"
+                    value="Image of Judge Dredd" href="/dredd" title="Image of Judge Dredd">
+                <br><br>
+            </form>
+        </div>
+
+
+    </main>
+
+    <footer>
+        <%- include("../../partials/footer") %>
+    </footer>
+</body>
+
+</html>
