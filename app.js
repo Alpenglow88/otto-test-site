@@ -83,8 +83,8 @@ app.get("/totoro", (req, res) => {
   });
 });
 
-app.get("/ariel", (req, res) => {
-  res.render("pages/test_pages/asset_pages/ariel", {
+app.get("/walle", (req, res) => {
+  res.render("pages/test_pages/asset_pages/walle", {
     version: version,
   });
 });
@@ -115,6 +115,12 @@ app.get("/no-test-id", (req, res) => {
 
 app.get("/test-api-data", (req, res) => {
   res.render("pages/test_pages/test-api-data", {
+    version: version,
+  });
+});
+
+app.get("/non-visible-elements", (req, res) => {
+  res.render("pages/test_pages/non-visible-elements", {
     version: version,
   });
 });
