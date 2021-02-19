@@ -17,6 +17,10 @@ app.get("/", (req, res) => {
   res.render("pages/landing-page", { version: version });
 });
 
+app.get("/favicon", (req, res) => {
+  res.render("favicon.ico", { version: version });
+});
+
 app.get("/index", (req, res) => {
   res.render("pages/index", { version: version });
 });
