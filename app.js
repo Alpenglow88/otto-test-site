@@ -7,6 +7,9 @@ const version = package.version;
 // Exposes css from public folder to Express
 app.use(express.static("public"));
 
+// Sets global favicon route
+app.use('/favicon.ico', express.static('favicon.ico'));
+
 // Sets view engine as EJS
 app.set("view engine", "ejs");
 
@@ -15,10 +18,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Sets root routing and defines what is seen there
 app.get("/", (req, res) => {
   res.render("pages/landing-page", { version: version });
-});
-
-app.get("/favicon", (req, res) => {
-  res.render("favicon.ico", { version: version });
 });
 
 app.get("/index", (req, res) => {
