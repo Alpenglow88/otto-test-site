@@ -8,7 +8,10 @@ const version = package.version;
 app.use(express.static("public"));
 
 // Sets global favicon route
-app.use('/favicon.ico', express.static('favicon.ico'));
+app.use(
+  "/favicon.ico",
+  express.static("./public/assets/otto-favicons/favicon.ico")
+);
 
 // Sets view engine as EJS
 app.set("view engine", "ejs");
@@ -157,3 +160,4 @@ app.listen(PORT, () => {
 // app.post('/home', (req, res) => {
 //     res.render('pages/return')
 // })
+
