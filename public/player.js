@@ -20,7 +20,7 @@ async function init() {
   const controls = ui.getControls();
   const player = controls.getPlayer();
 
-  const config = {
+  const uiConfig = {
     // addBigPlayButton: true,
     controlPanelElements: [
       "rewind",
@@ -48,7 +48,20 @@ async function init() {
       played: "rgb(64,224,208)",
     },
   };
-  ui.configure(config);
+  ui.configure(uiConfig);
+
+  player.configure({
+    streaming: {
+      retryParameters: {
+        maxAttempts: 3,
+      },
+    },
+    manifest: {
+      retryParameters: {
+        maxAttempts: 3,
+      },
+    },
+  });
 
   // Attach player and ui to the window to make it easy to access in the JS console.
   window.player = player;
@@ -57,16 +70,22 @@ async function init() {
   // Listen for error events.
   player.addEventListener("error", onPlayerErrorEvent);
   controls.addEventListener("error", onUIErrorEvent);
-  // Listen for variant adaption
+  // player.addEventListener("buffering", onBufferingEvent);
 
   // Try to load a manifest.
   // This is an asynchronous process.
   try {
     await player.load(manifestUri);
     // This runs if the asynchronous load is successful.
-    console.log("The video has now been loaded!");
+    console.log("Initial blank video loaded");
   } catch (error) {
     onPlayerError(error);
+  }
+}
+
+function onBufferingEvent(bufferingEvent) {
+  if (bufferingEvent.buffering === true) {
+    console.log(bufferingEvent.type, bufferingEvent.buffering);
   }
 }
 
@@ -78,6 +97,9 @@ function onPlayerErrorEvent(errorEvent) {
 function onPlayerError(error) {
   // Handle player error
   console.error("Error code", error.code, "object", error);
+  player.unload();
+  document.getElementById("video-player").poster =
+    "./assets/generic_error_2.png";
 }
 
 function onUIErrorEvent(errorEvent) {
