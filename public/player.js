@@ -97,9 +97,9 @@ function onPlayerErrorEvent(errorEvent) {
 function onPlayerError(error) {
   // Handle player error
   console.error("Error code", error.code, "object", error);
-  player.unload();
   document.getElementById("video-player").poster =
     "./assets/generic_error_2.png";
+  player.unload();
 }
 
 function onUIErrorEvent(errorEvent) {
