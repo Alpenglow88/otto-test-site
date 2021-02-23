@@ -42,6 +42,58 @@
                 <video autoplay data-shaka-player id="video-player" style="width:100%;height:100%"
                     poster="./assets/crude_otto.png"></video>
             </div>
+            <br><br>
+        </div>
+
+        <div class="container">
+            <div class="ghost-button" data_test_automation_id="variant_console_log_btn"
+                value="Click to see variant changes" onClick='
+                        document.getElementById("log_variants").checked = true;
+                        function myFunction() {
+                        // Get the checkbox
+                        var checkBox = document.getElementById("log_variants");
+                        // Get the output text
+                        var text = document.getElementById("text");
+
+                        // If the checkbox is checked, display the output text
+                        if (checkBox.checked == true) {
+                            text.style.display = "block";
+                        } else {
+                            text.style.display = "none";
+                        }
+                        }
+                        myFunction();
+
+                        player.addEventListener("adaptation", onAdaptationChange);
+                        player.addEventListener("variantchanged", onAdaptationChange);
+                        function onAdaptationChange(event) {
+                        var tracks = player.getVariantTracks();
+                        for (i = 0; i < tracks.length; i++) {
+                            if (tracks[i].active) {
+                            console.log("Bandwidth: " + tracks[i].bandwidth);
+                            console.log("Variant ID: " + tracks[i].id);
+                            break;
+                            }
+                        }}'>
+                Click to view variant changes in console
+
+                <input type="checkbox" id="log_variants" onclick='
+                function myFunction() {
+                    // Get the checkbox
+                    var checkBox = document.getElementById("log_variants");
+                    // Get the output text
+                    var text = document.getElementById("text");
+                  
+                    // If the checkbox is checked, display the output text
+                    if (checkBox.checked == true){
+                      text.style.display = "block";
+                    } else {
+                      text.style.display = "none";
+                    }
+                  } myFunction()'>
+
+                <a id="text" style="display:none">Variant changes logged in console - Refresh page to disable</a>
+            </div>
         </div>
 
         <div class="container">

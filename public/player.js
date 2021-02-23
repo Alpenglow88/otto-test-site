@@ -57,11 +57,7 @@ async function init() {
   // Listen for error events.
   player.addEventListener("error", onPlayerErrorEvent);
   controls.addEventListener("error", onUIErrorEvent);
-  // This is for bitrate change due to ABR
-  player.addEventListener("adaptation", onAdaptationChange);
-
-  //This is for bitrate change made by user
-  player.addEventListener("variantchanged", onAdaptationChange);
+  // Listen for variant adaption
 
   // Try to load a manifest.
   // This is an asynchronous process.
@@ -100,17 +96,6 @@ document.addEventListener("shaka-ui-loaded", init);
 // Listen to the custom shaka-ui-load-failed event, in case Shaka Player fails
 // to load (e.g. due to lack of browser support).
 document.addEventListener("shaka-ui-load-failed", initFailed);
-
-function onAdaptationChange(event) {
-  var tracks = player.getVariantTracks();
-  for (i = 0; i < tracks.length; i++) {
-    if (tracks[i].active) {
-      console.log("Bandwidth: " + tracks[i].bandwidth);
-      console.log("Variant ID: " + tracks[i].id);
-      break;
-    }
-  }
-}
 
 // Check browser in use
 // function checkBrowser() {
