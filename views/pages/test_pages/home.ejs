@@ -36,6 +36,7 @@
         <p>Contents</p>
         <ui>
           <li><a href="#button_click" data_test_automation_id="content_link_btn_click">Button Click</a></li>
+          <li><a href="#checkbox" data_test_automation_id="content_link_checkbox">Checkbox</a></li>
           <li><a href="#text_entry_fields" data_test_automation_id="content_link_text_entry">Text Entry Fields</a></li>
           <li><a href="#dropdown_menus" data_test_automation_id="content_link_dropdown_menu">Dropdown Menus</a></li>
           <li><a href="#duplicated_ids" data_test_automation_id="content_link_duplicated_id">Duplicated Test ID
@@ -68,6 +69,33 @@
           <input data_test_automation_id="generic-button" type="submit" class="ghost-button" value="Test button click"
             href="/success-button-click" title="Verify a button click by clicking this button">
         </form>
+      </fieldset>
+
+    </div>
+    <div class="container">
+      <fieldset>
+        <div data_test_automation_id="checkbox_information_heading">
+          <a id='checkbox'></a>
+          <h1>Checkbox</h1>
+        </div>
+        <div class="body-wide" data_test_automation_id="checkbox_info" <p>
+          This checkbox will display text when checked:true
+          </p>
+        </div>
+        <input type="checkbox" id="generic_checkbox" data_test_automation_id="generic_checkbox" onclick='
+        function myFunction() {
+            var checkBox = document.getElementById("generic_checkbox");
+            var text = document.getElementById("text");
+          
+            if (checkBox.checked == true){
+              text.style.display = "block";
+            } else {
+              text.style.display = "none";
+            }
+          } myFunction()'>
+
+        <p id="text" style="display:none" data_test_automation_id="generic_checkbox_text">Checked:true for this checkbox
+        </p>
       </fieldset>
     </div>
 
