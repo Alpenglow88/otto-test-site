@@ -1,19 +1,15 @@
 const manifestUri = "./assets/blank.mp4";
 
-function initApp() {
+async function init() {
   // Install built-in polyfills to patch browser incompatibilities.
   shaka.polyfill.installAll();
   // Check to see if the browser supports the basic APIs Shaka needs.
   if (shaka.Player.isBrowserSupported()) {
     // Everything looks good!
-    initPlayer();
   } else {
     // This browser does not have the minimum set of APIs we need.
     console.error("Browser not supported!");
   }
-}
-
-async function init() {
   // When using the UI, the player is made automatically by the UI object.
   const video = document.getElementById("video-player");
   const ui = video["ui"];
@@ -77,9 +73,24 @@ async function init() {
   try {
     await player.load(manifestUri);
     // This runs if the asynchronous load is successful.
-    console.log("Initial blank video loaded");
+    console.log("Video player initialised");
   } catch (error) {
     onPlayerError(error);
+  }
+}
+
+async function loadPlayer(manifest) {
+  try {
+    await player.load(manifest);
+    console.log("New video loaded");
+  } catch (error) {
+    if (error.code == 7000) {
+      // Debug code
+      // console.warn(
+      // "LOAD_INTERRUPTED (7000) - The call to Player.load() was interrupted by a call to Player.unload() or another call to Player.load().");
+    } else {
+      onPlayerError(error);
+    }
   }
 }
 
@@ -100,6 +111,10 @@ function onPlayerError(error) {
   document.getElementById("video-player").poster =
     "./assets/generic_error_2.png";
   player.unload();
+
+  var error_display = document.getElementById("error_code");
+  error_display.innerText = "Error Code: " + error.code;
+  error_display.style.display = "block";
 }
 
 function onUIErrorEvent(errorEvent) {

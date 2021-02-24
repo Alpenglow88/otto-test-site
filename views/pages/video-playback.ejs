@@ -42,6 +42,7 @@
                 <video autoplay data-shaka-player id="video-player" style="width:100%;height:100%"
                     poster="./assets/crude_otto.png"></video>
             </div>
+            <div id="error_code" style="display:none;"></div>
             <br><br>
         </div>
 
@@ -75,7 +76,7 @@
                             break;
                             }
                         }}'>
-                Click to view variant changes in console
+                Click to log variant changes in console
 
                 <input type="checkbox" id="log_variants" onclick='
                 function myFunction() {
@@ -100,53 +101,56 @@
             <fieldset>
                 <h2>Assets</h2>
                 <input
-                    onClick='player.load("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4")'
+                    onClick='loadPlayer("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"); document.getElementById("error_code").style.display="none"'
                     data_test_automation_id="sintel-mp4-button" type="submit" class="ghost-button"
                     value="Load Sintel (MP4-VoD)" title="Load Sintel MP4">
                 <input
-                    onClick='player.load("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4")'
+                    onClick='loadPlayer("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"); document.getElementById("error_code").style.display="none"'
                     data_test_automation_id="big-buck-bunny-mp4-button" type="submit" class="ghost-button"
                     value="Load Big Buck Bunny (MP4-VoD)" title="Load Big Buck Bunny MP4">
                 <br><br>
                 <input
-                    onClick='player.load("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel.ism/.mpd")'
+                    onClick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel.ism/.mpd"); document.getElementById("error_code").style.display="none"'
                     data_test_automation_id="tears-of-steel-dash-button" type="submit" class="ghost-button"
                     value="Load Tears of Steel (DASH-VoD)" title="Load Tears of Steel (DASH)">
-                <input onClick='player.load("https://storage.googleapis.com/shaka-demo-assets/sintel/dash.mpd")'
+                <input
+                    onClick='loadPlayer("https://storage.googleapis.com/shaka-demo-assets/sintel/dash.mpd"); document.getElementById("error_code").style.display="none"'
                     data_test_automation_id="sintel-dash-button" type="submit" class="ghost-button"
                     value="Load Sintel (DASH-VoD)" title="Load Sintel (DASH)">
                 <br><br>
                 <input
-                    onClick='player.load("https://multiplatform-f.akamaihd.net/i/multi/april11/sintel/sintel-hd_,512x288_450_b,640x360_700_b,768x432_1000_b,1024x576_1400_m,.mp4.csmil/master.m3u8")'
+                    onClick='loadPlayer("https://multiplatform-f.akamaihd.net/i/multi/april11/sintel/sintel-hd_,512x288_450_b,640x360_700_b,768x432_1000_b,1024x576_1400_m,.mp4.csmil/master.m3u8"); document.getElementById("error_code").style.display="none"'
                     data_test_automation_id="sintel-hls-button" type="submit" class="ghost-button"
                     value="Load Sintel (HLS-VoD)" title="Load Sintel (HLS)">
                 <input
-                    onClick='player.load("http://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel.ism/.m3u8")'
+                    onClick='loadPlayer("http://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel.ism/.m3u8"); document.getElementById("error_code").style.display="none"'
                     data_test_automation_id="tears-of-steel-hls-button" type="submit" class="ghost-button"
                     value="Load Tears of Steel (HLS-VoD)" title="Load Tears of Steel (HLS)">
                 <br><br>
-                <input onClick='player.load("https://moctobpltc-i.akamaihd.net/hls/live/571329/eight/playlist.m3u8")'
+                <input
+                    onClick='loadPlayer("https://moctobpltc-i.akamaihd.net/hls/live/571329/eight/playlist.m3u8"); document.getElementById("error_code").style.display="none"'
                     data_test_automation_id="live-hls-button" type="submit" class="ghost-button" value="Live (HLS)"
                     title="Load Live (HLS-Live)">
-                <input onClick='player.load("https://live.unified-streaming.com/scte35/scte35.isml/.mpd")'
+                <input
+                    onClick='loadPlayer("https://live.unified-streaming.com/scte35/scte35.isml/.mpd"); document.getElementById("error_code").style.display="none"'
                     data_test_automation_id="live-dash-button" type="submit" class="ghost-button" value="Live (DASH)"
                     title="Load Live (DASH-Live)">
                 <br><br>
                 <input
-                    onClick='player.load("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-multi-lang.ism/.m3u8")'
+                    onClick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-multi-lang.ism/.m3u8"); document.getElementById("error_code").style.display="none"'
                     data_test_automation_id="multi-audio-lang-hls-button" type="submit" class="ghost-button"
                     value="Multi Audio Language (HSL-VoD)" title="Load Multi Language (HSL)">
                 <input
-                    onClick='player.load("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-multi-lang.ism/.mpd")'
+                    onClick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-multi-lang.ism/.mpd"); document.getElementById("error_code").style.display="none"'
                     data_test_automation_id="multi-audio-lang-dash-button" type="submit" class="ghost-button"
                     value="Multi Audio Language (DASH-VoD)" title="Load Multi Audio Language (DASH)">
                 <br><br>
                 <input
-                    onClick='player.load("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-rfc5646.ism/.m3u8")'
+                    onClick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-rfc5646.ism/.m3u8"); document.getElementById("error_code").style.display="none"'
                     data_test_automation_id="subs-captions-hls-button" type="submit" class="ghost-button"
                     value="Subtitles/captions (HLS-VoD)" title="Subs/Captions (HLS)">
                 <input
-                    onClick='player.load("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-rfc5646.ism/.mpd")'
+                    onClick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-rfc5646.ism/.mpd"); document.getElementById("error_code").style.display="none"'
                     data_test_automation_id="subs-captions-dash-button" type="submit" class="ghost-button"
                     value="Subtitles/captions (DASH-VoD)" title="Subs/Captions (DASH)">
             </fieldset>
