@@ -60,7 +60,23 @@ app.get("/lessons", (req, res) => {
 });
 
 app.get("/video-playback", (req, res) => {
-  res.render("pages/video-playback", { version: version });
+  res.render("pages/video_playback_pages/video-playback", { version: version });
+});
+
+app.get("/video-playback-index", (req, res) => {
+  res.render("pages/video_playback_pages/video-playback-index", { version: version });
+});
+
+app.get("/video-playback-mp4", (req, res) => {
+  res.render("pages/video_playback_pages/video-playback-mp4", { version: version });
+});
+
+app.get("/video-playback-dash-vod", (req, res) => {
+  res.render("pages/video_playback_pages/video-playback-dash-vod", { version: version });
+});
+
+app.get("/video-playback-hls-vod", (req, res) => {
+  res.render("pages/video_playback_pages/video-playback-hls-vod", { version: version });
 });
 
 app.get("/return", (req, res) => {

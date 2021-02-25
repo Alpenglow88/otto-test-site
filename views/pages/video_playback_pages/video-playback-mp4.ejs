@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Video Playback - MP4</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <script src="./dist/shaka-player.compiled.debug.js"></script>
+    <script src="./player.js"></script>
+    <link rel="stylesheet" type="text/css" href="./dist/controls.css">
+    <script src="./dist/shaka-player.ui.js"></script>
+
+</head>
+
+<body>
+
+    <header class="header sticky sticky--top js-header">
+        <%- include("../../partials/header-playback") %>
+    </header>
+
+    <main>
+
+
+        <div class="container">
+            <div data_test_automation_id="video_playback_heading">
+                <h2>Video Playback - MP4</h2>
+            </div>
+
+            <div class="body-wide" data_test_automation_id="video_playback_text" <p>
+                This is for basic MP4 video on demand (VoD) playback
+                <br>
+                <br>
+                Below you will find 2 different MP4 video assets that you can load into the player. One is served from a
+                URL and one is served locally.
+                <br>
+                In order to load the video, simply click on the corresponding poster
+                image.
+                </p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div data-shaka-player-container id="video-container">
+                <video autoplay data-shaka-player id="video-player" style="width:100%;height:100%"
+                    poster="./assets/crude_otto.png"></video>
+            </div>
+            <div id="error_code" style="display:none;"></div>
+            <br><br>
+        </div>
+
+        <div class="container">
+            <fieldset>
+                <div class="row">
+                    <div class="column-2">
+                        <img src="./assets/sintel-poster.jpg" style="width: 150px" class="center"
+                            onClick='loadPlayer("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"); document.getElementById("error_code").style.display="none"'
+                            data_test_automation_id="sintel-mp4-image" type="submit" value="Load Sintel (MP4-VoD)"
+                            title="Load Sintel MP4">
+                    </div>
+                    <div class="column-2">
+                        <img src="./assets/big-buck-bunny-poster.jpg" style="width: 160px" class="centre"
+                            onClick='loadPlayer("./assets/big_buck_bunny_local.mp4"); document.getElementById("error_code").style.display="none"'
+                            data_test_automation_id="big-buck-bunny-mp4-image" type="submit" class="ghost-button"
+                            value="Load Big Buck Bunny (MP4-VoD)" title="Load Big Buck Bunny MP4">
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <form action="/video-playback-index">
+            <input data_test_automation_id="playback-asset-index-button" type="submit" class="ghost-button"
+                value="Full video asset index" href="/video-playback-index">
+        </form>
+
+    </main>
+
+    <footer>
+        <%- include("../../partials/footer") %>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Video Playback</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="./dist/controls.css">
+    <script src="./dist/shaka-player.ui.js"></script>
+
+</head>
+
+<body>
+
+    <header class="header sticky sticky--top js-header">
+        <%- include("../../partials/header-playback") %>
+    </header>
+
+    <main>
+
+
+        <div class="container">
+            <div data_test_automation_id="video_playback_heading">
+                <h2>Video Playback</h2>
+            </div>
+
+            <div class="body-wide" data_test_automation_id="video_playback_text" <p>
+                The video playback is enabled using a basic Shaka player implementation.
+                <br>
+                <br>
+                Below you will find different testing areas for each set of assets that you might want to focus on,
+                as well as an index of the available assets. These also have descriptions of the assets so you know what
+                to expect
+
+
+            </div>
+            <fieldset>
+                <h2>Asset Areas</h2>
+                <form action="/video-playback-mp4">
+                    <input data_test_automation_id="playback-asset-mp4-button" type="submit" class="ghost-button"
+                        value="MP4 video playback" href="/video-playback-mp4">
+                </form>
+                <br><br>
+                <form action="/video-playback-dash-vod">
+                    <input data_test_automation_id="playback-asset-dash-vod-button" type="submit" class="ghost-button"
+                        value="DASH VoD video playback" href="/video-playback-dash-vod">
+                </form>
+                <br><br>
+                <form action="/video-playback-hls-vod">
+                    <input data_test_automation_id="playback-asset-hls-vod-button" type="submit" class="ghost-button"
+                        value="HLS VoD video playback" href="/video-playback-hls-vod">
+                </form>
+                <br><br>
+            </fieldset>
+        </div>
+
+        <div class="container"></div>
+
+        </div>
+
+        <form action="/video-playback-index">
+            <input data_test_automation_id="playback-asset-index-button" type="submit" class="ghost-button"
+                value="Full video asset index" href="/video-playback-index">
+        </form>
+
+    </main>
+
+    <footer>
+        <%- include("../../partials/footer") %>
+    </footer>
+</body>
+
+</html>
