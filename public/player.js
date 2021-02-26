@@ -100,9 +100,9 @@ function checkBrowser() {
   return navigator.sayswho;
 }
 
-async function loadPlayer(manifest) {
+async function loadPlayer(manifest, offset) {
   try {
-    await player.load(manifest);
+    await player.load(manifest, offset);
     console.log("Video loaded");
   } catch (error) {
     if (error.code == 7000) {

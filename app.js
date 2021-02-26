@@ -79,6 +79,18 @@ app.get("/video-playback-hls-vod", (req, res) => {
   res.render("pages/video_playback_pages/video-playback-hls-vod", { version: version });
 });
 
+app.get("/video-playback-live", (req, res) => {
+  res.render("pages/video_playback_pages/video-playback-live", { version: version });
+});
+
+app.get("/video-playback-multi-audio", (req, res) => {
+  res.render("pages/video_playback_pages/video-playback-multi-audio", { version: version });
+});
+
+app.get("/video-playback-captions", (req, res) => {
+  res.render("pages/video_playback_pages/video-playback-captions", { version: version });
+});
+
 app.get("/return", (req, res) => {
   res.render("pages/return", { version: version });
 });

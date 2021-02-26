@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Video Playback - HLS VoD</title>
+    <title>Video Playback - Captions</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
     <script src="./dist/shaka-player.compiled.debug.js"></script>
@@ -24,19 +24,17 @@
 
         <div class="container">
             <div data_test_automation_id="video_playback_heading">
-                <h2>Video Playback - HLS VoD</h2>
+                <h2>Video Playback - Subtitles/Captions</h2>
             </div>
 
             <div class="body-wide" data_test_automation_id="video_playback_text" <p>
-                This is for HLS encrypted video on demand (VoD) playback
+                This is for video playback with subtitles/captions tracks
                 <br>
                 <br>
-                Below you will find 2 different HLS VoD video assets that you can load into the player. Both are served
-                as HLS .m3u8 files from URLs. One is a master manifest with multiple bitrate values and one is a single
-                bitrate manifest
+                Below you will find both a DASH and HLS encrypted stream containing multiple subtitles/captions tracks
+                (represented by language) both being fetched via URL
                 <br>
-                In order to
-                load the video, simply click on the corresponding poster
+                In order to load the video, simply click on the corresponding poster
                 image.
                 </p>
             </div>
@@ -55,16 +53,16 @@
             <fieldset>
                 <div class="row">
                     <div class="column-2">
-                        <img src="./assets/sintel-poster.jpg" style="width: 150px" class="center"
-                            onClick='loadPlayer("https://multiplatform-f.akamaihd.net/i/multi/april11/sintel/sintel-hd_,512x288_450_b,640x360_700_b,768x432_1000_b,1024x576_1400_m,.mp4.csmil/master.m3u8"); document.getElementById("error_code").style.display="none"'
-                            data_test_automation_id="sintel-hls-button" type="submit" class="ghost-button"
-                            value="Load Sintel (HLS-VoD)" title="Load Sintel (HLS)">
+                        <img src="./assets/mpeg-dash-poster.jpg" style="width: 150px" class="center"
+                            onClick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-rfc5646.ism/.mpd"); document.getElementById("error_code").style.display="none"'
+                            data_test_automation_id="subs-captions-dash-button" type="submit" class="ghost-button"
+                            value="Subtitles/captions (DASH-VoD)" title="Subs/Captions (DASH)">
                     </div>
                     <div class="column-2">
-                        <img src="./assets/tears-of-steel-poster.jpg" style="width: 152px" class="center"
-                            onClick='loadPlayer("http://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel.ism/.m3u8"); document.getElementById("error_code").style.display="none"'
-                            data_test_automation_id="tears-of-steel-hls-button" type="submit" class="ghost-button"
-                            value="Load Tears of Steel (HLS-VoD)" title="Load Tears of Steel (HLS)">
+                        <img src="./assets/apple_hls_poster.jpg" style="width: 140px" class="centre"
+                            onClick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-rfc5646.ism/.m3u8"); document.getElementById("error_code").style.display="none"'
+                            data_test_automation_id="subs-captions-hls-button" type="submit" class="ghost-button"
+                            value="Subtitles/captions (HLS-VoD)" title="Subs/Captions (HLS)">
                     </div>
                 </div>
             </fieldset>
