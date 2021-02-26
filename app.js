@@ -47,10 +47,6 @@ app.get("/faq", (req, res) => {
   res.render("pages/faq", { version: version });
 });
 
-app.get("/test", (req, res) => {
-  res.render("pages/waiting", { version: version });
-});
-
 app.get("/otto-tool", (req, res) => {
   res.render("pages/otto-tool", { version: version });
 });
@@ -89,6 +85,10 @@ app.get("/video-playback-multi-audio", (req, res) => {
 
 app.get("/video-playback-captions", (req, res) => {
   res.render("pages/video_playback_pages/video-playback-captions", { version: version });
+});
+
+app.get("/video-playback-drm", (req, res) => {
+  res.render("pages/waiting", { version: version });
 });
 
 app.get("/return", (req, res) => {
