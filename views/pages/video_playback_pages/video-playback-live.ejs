@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Video Playback - Live</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <script src="./dist/shaka-player.compiled.debug.js"></script>
+    <script src="./player.js"></script>
+    <link rel="stylesheet" type="text/css" href="./dist/controls.css">
+    <script src="./dist/shaka-player.ui.js"></script>
+
+</head>
+
+<body>
+
+    <header class="header sticky sticky--top js-header">
+        <%- include("../../partials/header-playback") %>
+    </header>
+
+    <main>
+
+
+        <div class="container">
+            <div data_test_automation_id="video_playback_heading">
+                <h2>Video Playback - Live</h2>
+            </div>
+
+            <div class="body-wide" data_test_automation_id="video_playback_text" <p>
+                This is for Live video playback
+                <br>
+                <br>
+                Below you will find a DASH encrypted live stream and an HLS encrypted live stream both being fetched via
+                URL
+                <br>
+                In order to load the video, simply click on the corresponding poster
+                image.
+                <br><br>
+                <strong>NOTE:</strong>
+                <br>By the nature of live streams, these links may break from time to time. If this does happen, please
+                report this to the team via the <a data_test_automation_id="contact_link" href="/contact">contact us
+                    link </a>
+                </p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div data-shaka-player-container id="video-container">
+                <video autoplay data-shaka-player id="video-player" style="width:100%;height:100%"
+                    poster="./assets/crude_otto.png"></video>
+            </div>
+            <div id="error_code" style="display:none;"></div>
+            <br><br>
+        </div>
+
+        <div class="container">
+            <fieldset>
+                <div class="row">
+                    <div class="column-2">
+                        <img src="./assets/mpeg-dash-poster.jpg" style="width: 150px" class="center"
+                            onClick='loadPlayer("https://live.unified-streaming.com/scte35/scte35.isml/.mpd"); document.getElementById("error_code").style.display="none"'
+                            data_test_automation_id="live-dash-button" type="submit" class="ghost-button"
+                            value="Live (DASH)" title="Load Live (DASH-Live)">
+                    </div>
+                    <div class="column-2">
+                        <img src="./assets/apple_hls_poster.jpg" style="width: 140px" class="centre"
+                            onClick='loadPlayer("https://moctobpltc-i.akamaihd.net/hls/live/571329/eight/playlist.m3u8"); document.getElementById("error_code").style.display="none"'
+                            data_test_automation_id="live-hls-button" type="submit" class="ghost-button"
+                            value="Live (HLS)" title="Load Live (HLS-Live)">
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <form action="/video-playback-index">
+            <input data_test_automation_id="playback-asset-index-button" type="submit" class="ghost-button"
+                value="Full video asset index" href="/video-playback-index">
+        </form>
+
+    </main>
+
+    <footer>
+        <%- include("../../partials/footer") %>
+    </footer>
+</body>
+
+</html>

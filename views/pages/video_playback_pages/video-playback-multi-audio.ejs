@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Video Playback - Multi Audio</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <script src="./dist/shaka-player.compiled.debug.js"></script>
+    <script src="./player.js"></script>
+    <link rel="stylesheet" type="text/css" href="./dist/controls.css">
+    <script src="./dist/shaka-player.ui.js"></script>
+
+</head>
+
+<body>
+
+    <header class="header sticky sticky--top js-header">
+        <%- include("../../partials/header-playback") %>
+    </header>
+
+    <main>
+
+
+        <div class="container">
+            <div data_test_automation_id="video_playback_heading">
+                <h2>Video Playback - Multi Audio</h2>
+            </div>
+
+            <div class="body-wide" data_test_automation_id="video_playback_text" <p>
+                This is for video playback with multiple audio tracks
+                <br>
+                <br>
+                Below you will find both a DASH and HLS encrypted stream containing multiple audio tracks (represented
+                by language) both being fetched via URL
+                <br>
+                In order to load the video, simply click on the corresponding poster
+                image.
+                </p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div data-shaka-player-container id="video-container">
+                <video autoplay data-shaka-player id="video-player" style="width:100%;height:100%"
+                    poster="./assets/crude_otto.png"></video>
+            </div>
+            <div id="error_code" style="display:none;"></div>
+            <br><br>
+        </div>
+
+        <div class="container">
+            <fieldset>
+                <div class="row">
+                    <div class="column-2">
+                        <img src="./assets/mpeg-dash-poster.jpg" style="width: 150px" class="center"
+                            onClick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-multi-lang.ism/.mpd"); document.getElementById("error_code").style.display="none"'
+                            data_test_automation_id="multi-audio-lang-dash-button" type="submit" class="ghost-button"
+                            value="Multi Audio Language (DASH-VoD)" title="Load Multi Audio Language (DASH)">
+                    </div>
+                    <div class="column-2">
+                        <img src="./assets/apple_hls_poster.jpg" style="width: 140px" class="centre"
+                            onClick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-multi-lang.ism/.m3u8"); document.getElementById("error_code").style.display="none"'
+                            data_test_automation_id="multi-audio-lang-hls-button" type="submit" class="ghost-button"
+                            value="Multi Audio Language (HLS-VoD)" title="Load Multi Language (HLS)">
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <form action="/video-playback-index">
+            <input data_test_automation_id="playback-asset-index-button" type="submit" class="ghost-button"
+                value="Full video asset index" href="/video-playback-index">
+        </form>
+
+    </main>
+
+    <footer>
+        <%- include("../../partials/footer") %>
+    </footer>
+</body>
+
+</html>

@@ -1,5 +1,3 @@
-const manifestUri = "./assets/blank.mp4";
-
 async function init() {
   // Install built-in polyfills to patch browser incompatibilities.
   shaka.polyfill.installAll();
@@ -8,7 +6,8 @@ async function init() {
     // Everything looks good!
   } else {
     // This browser does not have the minimum set of APIs we need.
-    console.error("Browser not supported!");
+    const browser = checkBrowser();
+    console.error(`${browser} browser not supported!`);
   }
   // When using the UI, the player is made automatically by the UI object.
   const video = document.getElementById("video-player");
@@ -68,21 +67,43 @@ async function init() {
   controls.addEventListener("error", onUIErrorEvent);
   // player.addEventListener("buffering", onBufferingEvent);
 
-  // Try to load a manifest.
-  // This is an asynchronous process.
-  try {
-    await player.load(manifestUri);
-    // This runs if the asynchronous load is successful.
-    console.log("Video player initialised");
-  } catch (error) {
-    onPlayerError(error);
-  }
+  // // Try to load a blank manifest.
+  // try {
+  //   await player.load("./assets/blank.mp4");
+  //   console.log("Video player initialised");
+  // } catch (error) {
+  //   onPlayerError(error);
+  // }
 }
 
-async function loadPlayer(manifest) {
+function checkBrowser() {
+  navigator.sayswho = (function () {
+    var ua = navigator.userAgent,
+      tem,
+      M =
+        ua.match(
+          /(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i
+        ) || [];
+    if (/trident/i.test(M[1])) {
+      tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
+      return "IE " + (tem[1] || "");
+    }
+    if (M[1] === "Chrome") {
+      tem = ua.match(/\b(OPR|Edge)\/(\d+)/);
+      if (tem != null) return tem.slice(1).join(" ").replace("OPR", "Opera");
+    }
+    M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, "-?"];
+    if ((tem = ua.match(/version\/(\d+)/i)) != null) M.splice(1, 1, tem[1]);
+    return M.join(" ");
+  })();
+
+  return navigator.sayswho;
+}
+
+async function loadPlayer(manifest, offset) {
   try {
-    await player.load(manifest);
-    console.log("New video loaded");
+    await player.load(manifest, offset);
+    console.log("Video loaded");
   } catch (error) {
     if (error.code == 7000) {
       // Debug code
@@ -133,24 +154,3 @@ document.addEventListener("shaka-ui-loaded", init);
 // Listen to the custom shaka-ui-load-failed event, in case Shaka Player fails
 // to load (e.g. due to lack of browser support).
 document.addEventListener("shaka-ui-load-failed", initFailed);
-
-// Check browser in use
-// function checkBrowser() {
-//   navigator.sayswho= (function(){
-//     var ua= navigator.userAgent, tem,
-//     M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
-//     if(/trident/i.test(M[1])){
-//         tem=  /\brv[ :]+(\d+)/g.exec(ua) || [];
-//         return 'IE '+(tem[1] || '');
-//     }
-//     if(M[1]=== 'Chrome'){
-//         tem= ua.match(/\b(OPR|Edge)\/(\d+)/);
-//         if(tem!= null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
-//     }
-//     M= M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
-//     if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
-//     return M.join(' ');
-// })();
-
-// return navigator.sayswho;
-// }

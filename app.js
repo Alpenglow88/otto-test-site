@@ -47,10 +47,6 @@ app.get("/faq", (req, res) => {
   res.render("pages/faq", { version: version });
 });
 
-app.get("/test", (req, res) => {
-  res.render("pages/waiting", { version: version });
-});
-
 app.get("/otto-tool", (req, res) => {
   res.render("pages/otto-tool", { version: version });
 });
@@ -60,7 +56,39 @@ app.get("/lessons", (req, res) => {
 });
 
 app.get("/video-playback", (req, res) => {
-  res.render("pages/video-playback", { version: version });
+  res.render("pages/video_playback_pages/video-playback", { version: version });
+});
+
+app.get("/video-playback-index", (req, res) => {
+  res.render("pages/video_playback_pages/video-playback-index", { version: version });
+});
+
+app.get("/video-playback-mp4", (req, res) => {
+  res.render("pages/video_playback_pages/video-playback-mp4", { version: version });
+});
+
+app.get("/video-playback-dash-vod", (req, res) => {
+  res.render("pages/video_playback_pages/video-playback-dash-vod", { version: version });
+});
+
+app.get("/video-playback-hls-vod", (req, res) => {
+  res.render("pages/video_playback_pages/video-playback-hls-vod", { version: version });
+});
+
+app.get("/video-playback-live", (req, res) => {
+  res.render("pages/video_playback_pages/video-playback-live", { version: version });
+});
+
+app.get("/video-playback-multi-audio", (req, res) => {
+  res.render("pages/video_playback_pages/video-playback-multi-audio", { version: version });
+});
+
+app.get("/video-playback-captions", (req, res) => {
+  res.render("pages/video_playback_pages/video-playback-captions", { version: version });
+});
+
+app.get("/video-playback-drm", (req, res) => {
+  res.render("pages/waiting", { version: version });
 });
 
 app.get("/return", (req, res) => {
