@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Video Playback - DASH VoD</title>
+    <title>Video Playback - Widevine DRM No Auth</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
     <script src="./dist/shaka-player.compiled.debug.js"></script>
-    <script src="./player/player.js"></script>
+    <script src="./player/drm_configs/player_wv_no_auth.js"></script>
     <link rel="stylesheet" type="text/css" href="./dist/controls.css">
     <script src="./dist/shaka-player.ui.js"></script>
 
@@ -16,7 +16,7 @@
 <body>
 
     <header class="header sticky sticky--top js-header">
-        <%- include("../../partials/header-playback") %>
+        <%- include("../../../../partials/header-playback") %>
     </header>
 
     <main>
@@ -24,18 +24,15 @@
 
         <div class="container">
             <div data_test_automation_id="video_playback_heading">
-                <h2>Video Playback - DASH VoD</h2>
+                <h2>Video Playback - Widevine DRM No Auth</h2>
             </div>
 
             <div class="body-wide" data_test_automation_id="video_playback_text" <p>
-                This is for DASH encrypted video on demand (VoD) playback
+                Below you will find a Widevine DRM encrypted video asset, with no authentication and served from a URL
+                (Tears of Steel), that you can load into the player.
                 <br>
                 <br>
-                Below you will find 2 different DASH VoD video assets that you can load into the player. Both are served
-                as DASH .mpd files from URLs.
-                <br>
-                In order to load the video, simply click on the corresponding poster
-                image.
+                In order to load the video, simply click on the poster image.
                 </p>
             </div>
         </div>
@@ -52,21 +49,23 @@
         <div class="container">
             <fieldset>
                 <div class="row">
-                    <div class="column-2">
+                    <div class="column-1">
                         <img src="./assets/tears-of-steel-poster.jpg" style="width: 152px" class="center"
-                            onClick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel.ism/.mpd"); document.getElementById("error_code").style.display="none"'
-                            data_test_automation_id="tears-of-steel-dash-button" value="Load Tears of Steel (DASH-VoD)"
-                            title="Load Tears of Steel (DASH)">
-                    </div>
-                    <div class="column-2">
-                        <img src="./assets/sintel-poster.jpg" style="width: 150px" class="center"
-                            onClick='loadPlayer("https://storage.googleapis.com/shaka-demo-assets/sintel/dash.mpd"); document.getElementById("error_code").style.display="none"'
-                            data_test_automation_id="sintel-dash-button" value="Load Sintel (DASH-VoD)"
-                            title="Load Sintel (DASH)">
+                            onClick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-dash-widevine.ism/.mpd"); document.getElementById("error_code").style.display="none"'
+                            data_test_automation_id="tears-of-steel-wv-no-auth-button" value="Load Tears of Steel (DRM)"
+                            title="Load Tears of Steel (DRM)">
                     </div>
                 </div>
-            </fieldset>
         </div>
+        </fieldset>
+        </div>
+
+
+
+        <form action="/video-playback-drm-index">
+            <input data_test_automation_id="playback-asset-drm-index-button" type="submit" class="ghost-button"
+                value="DRM video asset index" href="/video-playback-drm-index">
+        </form>
 
         <form action="/video-playback-index">
             <input data_test_automation_id="playback-asset-index-button" type="submit" class="ghost-button"
@@ -76,7 +75,7 @@
     </main>
 
     <footer>
-        <%- include("../../partials/footer") %>
+        <%- include("../../../../partials/footer") %>
     </footer>
 </body>
 
