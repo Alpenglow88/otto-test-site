@@ -28,8 +28,8 @@
             </div>
 
             <div class="body-wide" data_test_automation_id="video_playback_text" <p>
-                Below you will find a Widevine DRM encrypted video asset, with parameter authentication and served from a
-                URL (Tears of Steel), that you can load into the player.
+                Below you will find a Widevine DRM encrypted video asset, with parameter authentication and served from
+                different URLs, that you can load into the player.
                 <br>
                 <br>
                 In order to load the video, simply click on the poster image.
@@ -49,11 +49,17 @@
         <div class="container">
             <fieldset>
                 <div class="row">
-                    <div class="column-1">
+                    <div class="column-2">
                         <img src="./assets/tears-of-steel-poster.jpg" style="width: 152px" class="center"
                             onClick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-dash-widevine.ism/.mpd"); document.getElementById("error_code").style.display="none"'
                             data_test_automation_id="tears-of-steel-wv-button" value="Load Tears of Steel (DRM)"
                             title="Load Tears of Steel (DRM)">
+                    </div>
+                    <div class="column-2">
+                        <img src="./assets/sintel-poster.jpg" style="width: 150px" class="center"
+                            onClick='loadPlayer("https://storage.googleapis.com/shaka-demo-assets/sintel-widevine/dash.mpd"); document.getElementById("error_code").style.display="none"'
+                            data_test_automation_id="sintel-wv-button" value="Load Sintel (DRM)"
+                            title="Load Sintel (DRM)">
                     </div>
                 </div>
         </div>

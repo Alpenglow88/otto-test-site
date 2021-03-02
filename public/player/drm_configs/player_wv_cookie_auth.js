@@ -56,6 +56,11 @@ async function init() {
         maxAttempts: 3,
       },
     },
+    drm: {
+      servers: {
+        'com.widevine.alpha': 'https://cwip-shaka-proxy.appspot.com/cookie_auth',
+      }
+    }
   });
 
   // Attach player and ui to the window to make it easy to access in the JS console.
@@ -66,16 +71,15 @@ async function init() {
   player.addEventListener("error", onPlayerErrorEvent);
   controls.addEventListener("error", onUIErrorEvent);
   // player.addEventListener("buffering", onBufferingEvent);
-  // player.addEventListener("metadata", onMetadataEvent);
 
-  // // Try to load a blank manifest.
-  // try {
-  //   await player.load("./assets/blank.mp4");
-  //   console.log("Video player initialised");
-  // } catch (error) {
-  //   onPlayerError(error);
-  // }
+  player.getNetworkingEngine().registerRequestFilter(function(type, request) {
+    if (type == shaka.net.NetworkingEngine.RequestType.LICENSE) {
+      request.allowCrossSiteCredentials = true;
+    }
+  });
 }
+
+
 
 function checkBrowser() {
   navigator.sayswho = (function () {
@@ -122,10 +126,6 @@ function onBufferingEvent(bufferingEvent) {
   }
 }
 
-// function onMetadataEvent(metadataEvent) {
-//     console.log(metadataEvent.payload);
-// }
-
 function onPlayerErrorEvent(errorEvent) {
   // Extract the shaka.util.Error object from the event.
   onPlayerError(errorEvent.detail);
@@ -159,4 +159,3 @@ document.addEventListener("shaka-ui-loaded", init);
 // Listen to the custom shaka-ui-load-failed event, in case Shaka Player fails
 // to load (e.g. due to lack of browser support).
 document.addEventListener("shaka-ui-load-failed", initFailed);
-
