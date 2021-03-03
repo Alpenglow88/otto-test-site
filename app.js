@@ -87,9 +87,29 @@ app.get("/video-playback-captions", (req, res) => {
   res.render("pages/video_playback_pages/video-playback-captions", { version: version });
 });
 
-app.get("/video-playback-drm", (req, res) => {
+app.get("/video-playback-drm-index", (req, res) => {
+  res.render("pages/video_playback_pages/drm/video-playback-drm-index", { version: version });
+});
+
+app.get("/video-playback-drm-wv-no-auth", (req, res) => {
+  res.render("pages/video_playback_pages/drm/widevine/video-playback-drm-wv-no-auth", { version: version });
+});
+
+app.get("/video-playback-drm-wv-header-auth", (req, res) => {
+  res.render("pages/video_playback_pages/drm/widevine/video-playback-drm-wv-header-auth", { version: version });
+});
+
+app.get("/video-playback-drm-wv-param-auth", (req, res) => {
+  res.render("pages/video_playback_pages/drm/widevine/video-playback-drm-wv-param-auth", { version: version });
+});
+
+app.get("/video-playback-drm-wv-cookie-auth", (req, res) => {
   res.render("pages/waiting", { version: version });
 });
+
+// app.get("/video-playback-drm-wv-cookie-auth", (req, res) => {
+//   res.render("pages/video_playback_pages/drm/widevine/video-playback-drm-wv-cookie-auth", { version: version });
+// });
 
 app.get("/return", (req, res) => {
   res.render("pages/return", { version: version });

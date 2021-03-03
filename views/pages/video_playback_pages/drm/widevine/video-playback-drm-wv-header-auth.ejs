@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Video Playback - MP4</title>
+    <title>Video Playback - Widevine DRM Header Auth</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
     <script src="./dist/shaka-player.compiled.debug.js"></script>
-    <script src="./player/player.js"></script>
+    <script src="./player/drm_configs/player_wv_header_auth.js"></script>
     <link rel="stylesheet" type="text/css" href="./dist/controls.css">
     <script src="./dist/shaka-player.ui.js"></script>
 
@@ -16,7 +16,7 @@
 <body>
 
     <header class="header sticky sticky--top js-header">
-        <%- include("../../partials/header-playback") %>
+        <%- include("../../../../partials/header-playback") %>
     </header>
 
     <main>
@@ -24,18 +24,15 @@
 
         <div class="container">
             <div data_test_automation_id="video_playback_heading">
-                <h2>Video Playback - MP4</h2>
+                <h2>Video Playback - Widevine DRM Header Auth</h2>
             </div>
 
             <div class="body-wide" data_test_automation_id="video_playback_text" <p>
-                This is for basic MP4 video on demand (VoD) playback
+                Below you will find a Widevine DRM encrypted video asset, with header authentication and served from
+                different URLs, that you can load into the player.
                 <br>
                 <br>
-                Below you will find 2 different MP4 video assets that you can load into the player. One is a standard
-                MP4 served from a URL (Sintel) and one is a standard MP4 served locally (Big Buck Bunny).
-                <br>
-                In order to load the video, simply click on the corresponding poster
-                image.
+                In order to load the video, simply click on the poster image.
                 </p>
             </div>
         </div>
@@ -53,21 +50,28 @@
             <fieldset>
                 <div class="row">
                     <div class="column-2">
-                        <img src="./assets/sintel-poster.jpg" style="width: 150px" class="center"
-                            onClick='loadPlayer("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"); document.getElementById("error_code").style.display="none"'
-                            data_test_automation_id="sintel-mp4-image" type="submit" value="Load Sintel (MP4-VoD)"
-                            title="Load Sintel MP4">
+                        <img src="./assets/tears-of-steel-poster.jpg" style="width: 152px" class="center"
+                            onClick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-dash-widevine.ism/.mpd"); document.getElementById("error_code").style.display="none"'
+                            data_test_automation_id="tears-of-steel-wv-button" value="Load Tears of Steel (DRM)"
+                            title="Load Tears of Steel (DRM)">
                     </div>
                     <div class="column-2">
-                        <img src="./assets/big-buck-bunny-poster.jpg" style="width: 160px" class="centre"
-                            onClick='loadPlayer("./assets/big_buck_bunny_local.mp4"); document.getElementById("error_code").style.display="none"'
-                            data_test_automation_id="big-buck-bunny-mp4-image" type="submit" class="ghost-button"
-                            value="Load Big Buck Bunny (MP4-VoD)" title="Load Big Buck Bunny MP4">
+                        <img src="./assets/sintel-poster.jpg" style="width: 150px" class="center"
+                            onClick='loadPlayer("https://storage.googleapis.com/shaka-demo-assets/sintel-widevine/dash.mpd"); document.getElementById("error_code").style.display="none"'
+                            data_test_automation_id="sintel-wv-button" value="Load Sintel (DRM)"
+                            title="Load Sintel (DRM)">
                     </div>
                 </div>
         </div>
         </fieldset>
         </div>
+
+
+
+        <form action="/video-playback-drm-index">
+            <input data_test_automation_id="playback-asset-drm-index-button" type="submit" class="ghost-button"
+                value="DRM video asset index" href="/video-playback-drm-index">
+        </form>
 
         <form action="/video-playback-index">
             <input data_test_automation_id="playback-asset-index-button" type="submit" class="ghost-button"
@@ -77,7 +81,7 @@
     </main>
 
     <footer>
-        <%- include("../../partials/footer") %>
+        <%- include("../../../../partials/footer") %>
     </footer>
 </body>
 

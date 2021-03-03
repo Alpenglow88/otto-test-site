@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
     <script src="./dist/shaka-player.compiled.debug.js"></script>
-    <script src="./player.js"></script>
+    <script src="./player/player.js"></script>
     <link rel="stylesheet" type="text/css" href="./dist/controls.css">
     <script src="./dist/shaka-player.ui.js"></script>
 
@@ -50,19 +50,54 @@
         </div>
 
         <div class="container">
+            <input type="checkbox" id="log_variants" onclick='         
+                    function myFunction() {
+                    // Get the checkbox
+                    var checkBox = document.getElementById("log_variants");
+                    // Get the output text
+                    var text = document.getElementById("text");
+                    var initialText = document.getElementById("initial_text");
+
+                    // If the checkbox is checked, display the output text
+                    if (checkBox.checked == true) {
+                        text.style.display = "block";
+                        initialText.style.display = "none";
+                        player.addEventListener("adaptation", onAdaptationChange);
+                        player.addEventListener("variantchanged", onAdaptationChange);
+                    } 
+                    }
+                    function onAdaptationChange(event) {
+                    var tracks = player.getVariantTracks();
+                    for (i = 0; i < tracks.length; i++) {
+                        if (tracks[i].active) {
+                        console.log("Bandwidth: " + tracks[i].bandwidth);
+                        console.log("Variant ID: " + tracks[i].id);
+                        break;
+                        }
+                    }
+                    }
+                    myFunction();'>
+            <div data_test_automation_id="variant_console_log_btn" value="Click to see variant changes">
+                <a id="initial_text" style="display:block"> Check box to log variant changes in console </a>
+                <a id="text" style="display:none">Logging variant changes - Refresh page to disable</a>
+
+            </div>
+        </div>
+
+        <div class="container">
             <fieldset>
                 <div class="row">
                     <div class="column-2">
                         <img src="./assets/tears-of-steel-poster.jpg" style="width: 152px" class="center"
                             onClick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel.ism/.mpd"); document.getElementById("error_code").style.display="none"'
-                            data_test_automation_id="tears-of-steel-dash-button" type="submit" class="ghost-button"
-                            value="Load Tears of Steel (DASH-VoD)" title="Load Tears of Steel (DASH)">
+                            data_test_automation_id="tears-of-steel-dash-button" value="Load Tears of Steel (DASH-VoD)"
+                            title="Load Tears of Steel (DASH)">
                     </div>
                     <div class="column-2">
                         <img src="./assets/sintel-poster.jpg" style="width: 150px" class="center"
                             onClick='loadPlayer("https://storage.googleapis.com/shaka-demo-assets/sintel/dash.mpd"); document.getElementById("error_code").style.display="none"'
-                            data_test_automation_id="sintel-dash-button" type="submit" class="ghost-button"
-                            value="Load Sintel (DASH-VoD)" title="Load Sintel (DASH)">
+                            data_test_automation_id="sintel-dash-button" value="Load Sintel (DASH-VoD)"
+                            title="Load Sintel (DASH)">
                     </div>
                 </div>
             </fieldset>

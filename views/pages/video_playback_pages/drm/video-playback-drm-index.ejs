@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Video Playback - DRM Index</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="./dist/controls.css">
+    <script src="./dist/shaka-player.ui.js"></script>
+
+</head>
+
+<body>
+
+    <header class="header sticky sticky--top js-header">
+        <%- include("../../../partials/header-playback") %>
+    </header>
+
+    <main>
+
+
+        <div class="container">
+            <div data_test_automation_id="video_playback_heading">
+                <h2>Video Playback - DRM Index</h2>
+            </div>
+
+            <div class="body-wide" data_test_automation_id="video_playback_text" <p>
+                The below options contain DRM protected content with different authentication methods used
+            </div>
+            <fieldset>
+                <h2>Assets</h2>
+                <img src="./assets/widevine_logo.png" style="width: 200px" data_test_automation_id="widevine-logo"
+                    title="Widevine">
+                <form action="/video-playback-drm-wv-no-auth">
+                    <input data_test_automation_id="playback-assets-drm-wv-no-auth-button" type="submit"
+                        class="ghost-button" value="No Auth" href="/video-playback-drm-wv-no-auth">
+                </form>
+                <br>
+                <form action="/video-playback-drm-wv-header-auth">
+                    <input data_test_automation_id="playback-assets-drm-wv-header-auth-button" type="submit"
+                        class="ghost-button" value="Header Auth" href="/video-playback-drm-wv-header-auth">
+                </form>
+                <br>
+                <form action="/video-playback-drm-wv-param-auth">
+                    <input data_test_automation_id="playback-assets-drm-wv-param-auth-button" type="submit"
+                        class="ghost-button" value="Parameter Auth" href="/video-playback-drm-wv-param-auth">
+                </form>
+                <br>
+                <form action="/video-playback-drm-wv-cookie-auth">
+                    <input data_test_automation_id="playback-assets-drm-wv-cookie-auth-button" type="submit"
+                        class="ghost-button" value="Cookie Auth" href="/video-playback-drm-wv-cookie-auth">
+                </form>
+                <br>
+            </fieldset>
+        </div>
+
+        <div class="container"></div>
+
+        </div>
+
+        <form action="/video-playback-index">
+            <input data_test_automation_id="playback-asset-index-button" type="submit" class="ghost-button"
+                value="Full video asset index" href="/video-playback-index">
+        </form>
+
+    </main>
+
+    <footer>
+        <%- include("../../../partials/footer") %>
+    </footer>
+</body>
+
+</html>

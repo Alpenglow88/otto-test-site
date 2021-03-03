@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
     <script src="./dist/shaka-player.compiled.debug.js"></script>
-    <script src="./player.js"></script>
+    <script src="./player/player.js"></script>
     <link rel="stylesheet" type="text/css" href="./dist/controls.css">
     <script src="./dist/shaka-player.ui.js"></script>
 
@@ -32,7 +32,7 @@
                 <br>
                 <br>
                 Below you will find a DASH encrypted live stream and an HLS encrypted live stream both being fetched via
-                URL
+                URL - you will also find a backup HLS stream being fetch via URL on the far right of the asset list.
                 <br>
                 In order to load the video, simply click on the corresponding poster
                 image.
@@ -57,17 +57,23 @@
         <div class="container">
             <fieldset>
                 <div class="row">
-                    <div class="column-2">
+                    <div class="column-3">
                         <img src="./assets/mpeg-dash-poster.jpg" style="width: 150px" class="center"
                             onClick='loadPlayer("https://live.unified-streaming.com/scte35/scte35.isml/.mpd"); document.getElementById("error_code").style.display="none"'
                             data_test_automation_id="live-dash-button" type="submit" class="ghost-button"
                             value="Live (DASH)" title="Load Live (DASH-Live)">
                     </div>
-                    <div class="column-2">
+                    <div class="column-3">
                         <img src="./assets/apple_hls_poster.jpg" style="width: 140px" class="centre"
                             onClick='loadPlayer("https://moctobpltc-i.akamaihd.net/hls/live/571329/eight/playlist.m3u8"); document.getElementById("error_code").style.display="none"'
                             data_test_automation_id="live-hls-button" type="submit" class="ghost-button"
                             value="Live (HLS)" title="Load Live (HLS-Live)">
+                    </div>
+                    <div class="column-3">
+                        <img src="./assets/hls-backup-poster.png" style="width: 100px" class="centre"
+                            onClick='loadPlayer("https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1614710118/ei/BjE-YO6ABMrW1gbp-KSAAQ/ip/82.36.73.227/id/6NIt6ibAD6I.2/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/hls_chunk_host/r1---sn-8pgbpohxqp5-ajtl.googlevideo.com/playlist_duration/30/manifest_duration/30/vprv/1/playlist_type/DVR/initcwndbps/13380/mh/4O/mm/44/mn/sn-8pgbpohxqp5-ajtl/ms/lva/mv/m/mvi/1/pl/22/dover/11/keepalive/yes/fexp/24007246/mt/1614687862/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,playlist_duration,manifest_duration,vprv,playlist_type/sig/AOq0QJ8wRQIgRMBYsfHITgES70CRsASbi8_yhIlNxCz4UFkfY39-7XsCIQDYPLJH5fIbABa_NkZFaKWhbnMkIa27sCMqqQUqFCzMVA%3D%3D/lsparams/hls_chunk_host,initcwndbps,mh,mm,mn,ms,mv,mvi,pl/lsig/AG3C_xAwRQIhAMVBgqDMh6MEYpfPOUfQ6u-PR6lGpCQaYPIABjq8GdM4AiAobNCGzh4gWYJwn8ljcPT-gmULJLsjbK4M9LoQ9Mev6Q%3D%3D/playlist/index.m3u8"); document.getElementById("error_code").style.display="none"'
+                            data_test_automation_id="live-hls-backup-button" type="submit" class="ghost-button"
+                            value="Live backup (HLS)" title="Load Live backup (HLS-Live)">
                     </div>
                 </div>
             </fieldset>

@@ -56,6 +56,11 @@ async function init() {
         maxAttempts: 3,
       },
     },
+    drm: {
+      servers: {
+        'com.widevine.alpha': 'https://cwip-shaka-proxy.appspot.com/header_auth',
+      }
+    }
   });
 
   // Attach player and ui to the window to make it easy to access in the JS console.
@@ -67,14 +72,14 @@ async function init() {
   controls.addEventListener("error", onUIErrorEvent);
   // player.addEventListener("buffering", onBufferingEvent);
 
-  // // Try to load a blank manifest.
-  // try {
-  //   await player.load("./assets/blank.mp4");
-  //   console.log("Video player initialised");
-  // } catch (error) {
-  //   onPlayerError(error);
-  // }
+  player.getNetworkingEngine().registerRequestFilter(function(type, request) {
+  if (type == shaka.net.NetworkingEngine.RequestType.LICENSE) {
+    request.headers['CWIP-Auth-Header'] = 'VGhpc0lzQVRlc3QK';
+  }
+});
 }
+
+
 
 function checkBrowser() {
   navigator.sayswho = (function () {
