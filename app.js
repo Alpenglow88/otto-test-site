@@ -104,8 +104,12 @@ app.get("/video-playback-drm-wv-param-auth", (req, res) => {
 });
 
 app.get("/video-playback-drm-wv-cookie-auth", (req, res) => {
-  res.render("pages/video_playback_pages/drm/widevine/video-playback-drm-wv-cookie-auth", { version: version });
+  res.render("pages/waiting", { version: version });
 });
+
+// app.get("/video-playback-drm-wv-cookie-auth", (req, res) => {
+//   res.render("pages/video_playback_pages/drm/widevine/video-playback-drm-wv-cookie-auth", { version: version });
+// });
 
 app.get("/return", (req, res) => {
   res.render("pages/return", { version: version });
