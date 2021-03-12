@@ -15,74 +15,63 @@
 
   <main>
 
-    <div class="container">
-      <div data_test_automation_id="welcome_test_home_text">
-        <h1>Welcome to the test pages area</h1>
-      </div>
-
-      <div class="body-wide" data_test_automation_id="test-pages_what_is_this_text" <p>
-        <br>
-        This is a directory of scenarios that you can use to test against.
-        <br>
-        <br>
-        Some of the elements may require you to click through to other ares or have designated pages of their own but
-        this is a useful place to begin for much of the testing that you may want to do to start with.
-        </p>
-      </div>
+    <div data_test_automation_id="welcome_test_home_text">
+      <h1>Welcome to the test pages area</h1>
     </div>
 
-    <div class="container" data_test_automation_id="table_of_contents">
-      <fieldset>
-        <p>Contents</p>
-        <ui>
-          <li><a href="#button_click" data_test_automation_id="content_link_btn_click">Button Click</a></li>
-          <li><a href="#checkbox" data_test_automation_id="content_link_checkbox">Checkbox</a></li>
-          <li><a href="#text_entry_fields" data_test_automation_id="content_link_text_entry">Text Entry Fields</a></li>
-          <li><a href="#dropdown_menus" data_test_automation_id="content_link_dropdown_menu">Dropdown Menus</a></li>
-          <li><a href="#duplicated_ids" data_test_automation_id="content_link_duplicated_id">Duplicated Test ID
-              Selectors</a></li>
-          <li><a href="#no_test_ids" data_test_automation_id="content_link_no_test_id">No Test ID Selectors</a>
-          </li>
-          <li><a href="#non_visible_elements" data_test_automation_id="content_link_non_visible_elements">Test
-              Non-Visible Elements</a>
-          </li>
-          <li><a href="#test_api_data" data_test_automation_id="content_link_test_api_data">Test API Response Data</a>
-          </li>
-          <li><a href="#video_playback" data_test_automation_id="content_link_video_playback">Test Video Playback</a>
-          </li>
-        </ui>
-      </fieldset>
+    <div class="body-wide" data_test_automation_id="test-pages_what_is_this_text" <p>
+      <br>
+      This is a directory of scenarios that you can use to test against.
+      <br>
+      <br>
+      Some of the elements may require you to click through to other ares or have designated pages of their own but
+      this is a useful place to begin for much of the testing that you may want to do to start with.
+      </p>
     </div>
 
-
-    <div class="container">
-      <fieldset>
-        <div data_test_automation_id="button_click_information_heading">
-          <a id='button_click'></a>
-          <h1>Button click</h1>
-        </div>
-        <div class="body-wide" data_test_automation_id="button_click_info" <p>
-          This button will allow you to test click methods
-          </p>
-        </div>
-        <form action="/success-button-click">
-          <input data_test_automation_id="generic-button" type="submit" class="ghost-button" value="Test button click"
-            href="/success-button-click" title="Verify a button click by clicking this button">
-        </form>
-      </fieldset>
-
+    <div data_test_automation_id="table_of_contents">
+      <p>Contents</p>
+      <ui>
+        <li><a href="#button_click" data_test_automation_id="content_link_btn_click">Button Click</a></li>
+        <li><a href="#checkbox" data_test_automation_id="content_link_checkbox">Checkbox</a></li>
+        <li><a href="#text_entry_fields" data_test_automation_id="content_link_text_entry">Text Entry Fields</a></li>
+        <li><a href="#dropdown_menus" data_test_automation_id="content_link_dropdown_menu">Dropdown Menus</a></li>
+        <li><a href="#duplicated_ids" data_test_automation_id="content_link_duplicated_id">Duplicated Test ID
+            Selectors</a></li>
+        <li><a href="#no_test_ids" data_test_automation_id="content_link_no_test_id">No Test ID Selectors</a>
+        </li>
+        <li><a href="#non_visible_elements" data_test_automation_id="content_link_non_visible_elements">Test
+            Non-Visible Elements</a>
+        </li>
+        <li><a href="#test_api_data" data_test_automation_id="content_link_test_api_data">Test API Response Data</a>
+        </li>
+        <li><a href="#video_playback" data_test_automation_id="content_link_video_playback">Test Video Playback</a>
+        </li>
+      </ui>
     </div>
-    <div class="container">
-      <fieldset>
-        <div data_test_automation_id="checkbox_information_heading">
-          <a id='checkbox'></a>
-          <h1>Checkbox</h1>
-        </div>
-        <div class="body-wide" data_test_automation_id="checkbox_info" <p>
-          This checkbox will display text when checked:true
-          </p>
-        </div>
-        <input type="checkbox" id="generic_checkbox" data_test_automation_id="generic_checkbox" onclick='
+
+    <div data_test_automation_id="button_click_information_heading">
+      <a id='button_click'></a>
+      <h1>Button click</h1>
+    </div>
+    <div class="body-wide" data_test_automation_id="button_click_info" <p>
+      This button will allow you to test click methods
+      </p>
+    </div>
+    <form action="/success-button-click">
+      <input data_test_automation_id="generic-button" type="submit" class="ghost-button" value="Test button click"
+        href="/success-button-click" title="Verify a button click by clicking this button">
+    </form>
+
+    <div data_test_automation_id="checkbox_information_heading">
+      <a id='checkbox'></a>
+      <h1>Checkbox</h1>
+    </div>
+    <div class="body-wide" data_test_automation_id="checkbox_info" <p>
+      This checkbox will display text when checked:true
+      </p>
+    </div>
+    <input type="checkbox" id="generic_checkbox" data_test_automation_id="generic_checkbox" onclick='
         function myFunction() {
             var checkBox = document.getElementById("generic_checkbox");
             var text = document.getElementById("text");
@@ -92,137 +81,107 @@
             } else {
               text.style.display = "none";
             }
-          } myFunction()'> <=== Here is the checkbox
+          } myFunction()'>
+    <=== Here is the checkbox <p id="text" style="display:none" data_test_automation_id="generic_checkbox_text">
+      Checked:true for this checkbox
+      </p>
 
-        <p id="text" style="display:none" data_test_automation_id="generic_checkbox_text">Checked:true for this checkbox
+      <div data_test_automation_id="text_entry_information_heading">
+        <a id='text_entry_fields'></a>
+        <h1>Text Entry Field</h1>
+      </div>
+      <div class="body-wide" data_test_automation_id="text_entry_info" <p>
+        This page will allow you to test text entry methods
         </p>
-      </fieldset>
-    </div>
+      </div>
+      <form action="/text-entry-field">
+        <input data_test_automation_id="enter-text-entry-field-button" type="submit" class="ghost-button"
+          value="Test text entry fields" href="/text-entry-field"
+          title="Verify text entry field behaviour by clicking this button">
+      </form>
 
-    <div class="container">
-      <fieldset>
-        <div data_test_automation_id="text_entry_information_heading">
-          <a id='text_entry_fields'></a>
-          <h1>Text Entry Field</h1>
-        </div>
-        <div class="body-wide" data_test_automation_id="text_entry_info" <p>
-          This page will allow you to test text entry methods
-          </p>
-        </div>
-        <form action="/text-entry-field">
-          <input data_test_automation_id="enter-text-entry-field-button" type="submit" class="ghost-button"
-            value="Test text entry fields" href="/text-entry-field"
-            title="Verify text entry field behaviour by clicking this button">
-        </form>
-      </fieldset>
-    </div>
+      <div data_test_automation_id="dropdown_menu_information_heading">
+        <a id='dropdown_menus'></a>
+        <h1>Dropdown Menu</h1>
+      </div>
+      <div class="body-wide" data_test_automation_id="dropdown_info" <p>
+        This page will allow you to test dropdown checking methods
+        </p>
+      </div>
+      <form action="/dropdown-menu">
+        <input data_test_automation_id="enter-dropdown-menu-button" type="submit" class="ghost-button"
+          value="Test dropdown menus" href="/dropdown-menu"
+          title="Verify dropdown menu behaviour by clicking this button">
+      </form>
 
-    <div class="container">
-      <fieldset>
-        <div data_test_automation_id="dropdown_menu_information_heading">
-          <a id='dropdown_menus'></a>
-          <h1>Dropdown Menu</h1>
-        </div>
-        <div class="body-wide" data_test_automation_id="dropdown_info" <p>
-          This page will allow you to test dropdown checking methods
-          </p>
-        </div>
-        <form action="/dropdown-menu">
-          <input data_test_automation_id="enter-dropdown-menu-button" type="submit" class="ghost-button"
-            value="Test dropdown menus" href="/dropdown-menu"
-            title="Verify dropdown menu behaviour by clicking this button">
-        </form>
-      </fieldset>
-    </div>
+      <div data_test_automation_id="duplicate_id_information_heading">
+        <a id='duplicated_ids'></a>
+        <h1>Duplicated 'test_id' Selectors</h1>
+      </div>
+      <div class="body-wide" data_test_automation_id="duplicate_id_info" <p>
+        This page will allow you to test elements that have duplicated test ID selectors
+        </p>
+      </div>
+      <form action="/duplicate-id">
+        <input data_test_automation_id="enter-duplicate-id-menu-button" type="submit" class="ghost-button"
+          value="Test duplicated test IDs" href="/duplicate-id"
+          title="Verify testing duplicated test IDs by clicking this button">
+      </form>
 
-    <div class="container">
-      <fieldset>
-        <div data_test_automation_id="duplicate_id_information_heading">
-          <a id='duplicated_ids'></a>
-          <h1>Duplicated 'test_id' Selectors</h1>
-        </div>
-        <div class="body-wide" data_test_automation_id="duplicate_id_info" <p>
-          This page will allow you to test elements that have duplicated test ID selectors
-          </p>
-        </div>
-        <form action="/duplicate-id">
-          <input data_test_automation_id="enter-duplicate-id-menu-button" type="submit" class="ghost-button"
-            value="Test duplicated test IDs" href="/duplicate-id"
-            title="Verify testing duplicated test IDs by clicking this button">
-        </form>
-      </fieldset>
-    </div>
+      <div data_test_automation_id="no_test_id_information_heading">
+        <a id='no_test_ids'></a>
+        <h1>No 'test_id' Selectors</h1>
+      </div>
+      <div class="body-wide" data_test_automation_id="no_test_id_info" <p>
+        This page will allow you to test elements that have no dedicated test ID selector
+        </p>
+      </div>
+      <form action="/no-test-id">
+        <input data_test_automation_id="enter-no-test-id-menu-button" type="submit" class="ghost-button"
+          value="Test no test IDs" href="/no-test-id"
+          title="Verify testing no test ID selectors by clicking this button">
+      </form>
 
-    <div class="container">
-      <fieldset>
-        <div data_test_automation_id="no_test_id_information_heading">
-          <a id='no_test_ids'></a>
-          <h1>No 'test_id' Selectors</h1>
-        </div>
-        <div class="body-wide" data_test_automation_id="no_test_id_info" <p>
-          This page will allow you to test elements that have no dedicated test ID selector
-          </p>
-        </div>
-        <form action="/no-test-id">
-          <input data_test_automation_id="enter-no-test-id-menu-button" type="submit" class="ghost-button"
-            value="Test no test IDs" href="/no-test-id"
-            title="Verify testing no test ID selectors by clicking this button">
-        </form>
-      </fieldset>
-    </div>
+      <div data_test_automation_id="non_visible_elements_information_heading">
+        <a id='non_visible_elements'></a>
+        <h1>Non-Visible Elements</h1>
+      </div>
+      <div class="body-wide" data_test_automation_id="non_visible_elements_info" <p>
+        This page has both visible and non visible elements
+        </p>
+      </div>
+      <form action="/non-visible-elements">
+        <input data_test_automation_id="non-visible-elements-menu-button" type="submit" class="ghost-button"
+          value="Test non visible elements" href="/non-visible-elements"
+          title="Verify non visible elements by clicking this button">
+      </form>
 
-    <div class="container">
-      <fieldset>
-        <div data_test_automation_id="non_visible_elements_information_heading">
-          <a id='non_visible_elements'></a>
-          <h1>Non-Visible Elements</h1>
-        </div>
-        <div class="body-wide" data_test_automation_id="non_visible_elements_info" <p>
-          This page has both visible and non visible elements
-          </p>
-        </div>
-        <form action="/non-visible-elements">
-          <input data_test_automation_id="non-visible-elements-menu-button" type="submit" class="ghost-button"
-            value="Test non visible elements" href="/non-visible-elements"
-            title="Verify non visible elements by clicking this button">
-        </form>
-      </fieldset>
-    </div>
+      <div data_test_automation_id="test_api_data_information_heading">
+        <a id='test_api_data'></a>
+        <h1>Verifying data from an API</h1>
+      </div>
+      <div class="body-wide" data_test_automation_id="test_api_data_info" <p>
+        This page will allow you to test if information gathered from an API is correctly represented on a page
+        </p>
+      </div>
+      <form action="/test-api-data">
+        <input data_test_automation_id="test-api-data-menu-button" type="submit" class="ghost-button"
+          value="Test API data on page" href="/test-api-data"
+          title="Verify testing no test ID selectors by clicking this button">
+      </form>
 
-    <div class="container">
-      <fieldset>
-        <div data_test_automation_id="test_api_data_information_heading">
-          <a id='test_api_data'></a>
-          <h1>Verifying data from an API</h1>
-        </div>
-        <div class="body-wide" data_test_automation_id="test_api_data_info" <p>
-          This page will allow you to test if information gathered from an API is correctly represented on a page
-          </p>
-        </div>
-        <form action="/test-api-data">
-          <input data_test_automation_id="test-api-data-menu-button" type="submit" class="ghost-button"
-            value="Test API data on page" href="/test-api-data"
-            title="Verify testing no test ID selectors by clicking this button">
-        </form>
-      </fieldset>
-    </div>
-
-    <div class="container">
-      <fieldset>
-        <div data_test_automation_id="video_playback_information_heading">
-          <a id='video_playback'></a>
-          <h1>Testing video playback</h1>
-        </div>
-        <div class="body-wide" data_test_automation_id="video_playback_info" <p>
-          This page will allow you to test various parts of video playback
-          </p>
-        </div>
-        <form action="/video-playback">
-          <input data_test_automation_id="video-playback-menu-button" type="submit" class="ghost-button"
-            value="Test video playback" href="/video-playback" title="Verify video playback by clicking this button">
-        </form>
-      </fieldset>
-    </div>
+      <div data_test_automation_id="video_playback_information_heading">
+        <a id='video_playback'></a>
+        <h1>Testing video playback</h1>
+      </div>
+      <div class="body-wide" data_test_automation_id="video_playback_info" <p>
+        This page will allow you to test various parts of video playback
+        </p>
+      </div>
+      <form action="/video-playback">
+        <input data_test_automation_id="video-playback-menu-button" type="submit" class="ghost-button"
+          value="Test video playback" href="/video-playback" title="Verify video playback by clicking this button">
+      </form>
 
   </main>
 

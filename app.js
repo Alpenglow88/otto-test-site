@@ -60,56 +60,80 @@ app.get("/video-playback", (req, res) => {
 });
 
 app.get("/video-playback-index", (req, res) => {
-  res.render("pages/video_playback_pages/video-playback-index", { version: version });
+  res.render("pages/video_playback_pages/video-playback-index", {
+    version: version,
+  });
 });
 
 app.get("/video-playback-mp4", (req, res) => {
-  res.render("pages/video_playback_pages/video-playback-mp4", { version: version });
+  res.render("pages/video_playback_pages/video-playback-mp4", {
+    version: version,
+  });
 });
 
 app.get("/video-playback-dash-vod", (req, res) => {
-  res.render("pages/video_playback_pages/video-playback-dash-vod", { version: version });
+  res.render("pages/video_playback_pages/video-playback-dash-vod", {
+    version: version,
+  });
 });
 
 app.get("/video-playback-hls-vod", (req, res) => {
-  res.render("pages/video_playback_pages/video-playback-hls-vod", { version: version });
+  res.render("pages/video_playback_pages/video-playback-hls-vod", {
+    version: version,
+  });
 });
 
 app.get("/video-playback-live", (req, res) => {
-  res.render("pages/video_playback_pages/video-playback-live", { version: version });
+  res.render("pages/video_playback_pages/video-playback-live", {
+    version: version,
+  });
 });
 
 app.get("/video-playback-multi-audio", (req, res) => {
-  res.render("pages/video_playback_pages/video-playback-multi-audio", { version: version });
+  res.render("pages/video_playback_pages/video-playback-multi-audio", {
+    version: version,
+  });
 });
 
 app.get("/video-playback-captions", (req, res) => {
-  res.render("pages/video_playback_pages/video-playback-captions", { version: version });
+  res.render("pages/video_playback_pages/video-playback-captions", {
+    version: version,
+  });
 });
 
 app.get("/video-playback-drm-index", (req, res) => {
-  res.render("pages/video_playback_pages/drm/video-playback-drm-index", { version: version });
+  res.render("pages/video_playback_pages/drm/video-playback-drm-index", {
+    version: version,
+  });
 });
 
 app.get("/video-playback-drm-wv-no-auth", (req, res) => {
-  res.render("pages/video_playback_pages/drm/widevine/video-playback-drm-wv-no-auth", { version: version });
+  res.render(
+    "pages/video_playback_pages/drm/widevine/video-playback-drm-wv-no-auth",
+    { version: version }
+  );
 });
 
 app.get("/video-playback-drm-wv-header-auth", (req, res) => {
-  res.render("pages/video_playback_pages/drm/widevine/video-playback-drm-wv-header-auth", { version: version });
+  res.render(
+    "pages/video_playback_pages/drm/widevine/video-playback-drm-wv-header-auth",
+    { version: version }
+  );
 });
 
 app.get("/video-playback-drm-wv-param-auth", (req, res) => {
-  res.render("pages/video_playback_pages/drm/widevine/video-playback-drm-wv-param-auth", { version: version });
+  res.render(
+    "pages/video_playback_pages/drm/widevine/video-playback-drm-wv-param-auth",
+    { version: version }
+  );
 });
 
 app.get("/video-playback-drm-wv-cookie-auth", (req, res) => {
-  res.render("pages/waiting", { version: version });
+  res.render(
+    "pages/video_playback_pages/drm/widevine/video-playback-drm-wv-cookie-auth",
+    { version: version }
+  );
 });
-
-// app.get("/video-playback-drm-wv-cookie-auth", (req, res) => {
-//   res.render("pages/video_playback_pages/drm/widevine/video-playback-drm-wv-cookie-auth", { version: version });
-// });
 
 app.get("/return", (req, res) => {
   res.render("pages/return", { version: version });
@@ -208,4 +232,3 @@ app.listen(PORT, () => {
 // app.post('/home', (req, res) => {
 //     res.render('pages/return')
 // })
-

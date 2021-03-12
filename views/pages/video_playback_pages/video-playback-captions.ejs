@@ -21,87 +21,58 @@
 
     <main>
 
-
-        <div class="container">
-            <div data_test_automation_id="video_playback_heading">
-                <h2>Video Playback - Subtitles/Captions</h2>
-            </div>
-
-            <div class="body-wide" data_test_automation_id="video_playback_text" <p>
-                This is for video playback with subtitles/captions tracks
-                <br>
-                <br>
-                Below you will find both a DASH and HLS encrypted stream containing multiple subtitles/captions tracks
-                (represented by language) both being fetched via URL
-                <br>
-                In order to load the video, simply click on the corresponding poster
-                image.
-                </p>
-            </div>
+        <div data_test_automation_id="video_playback_heading">
+            <h2>Video Playback - Subtitles/Captions</h2>
         </div>
 
-        <div class="container">
-            <div data-shaka-player-container id="video-container">
-                <video autoplay data-shaka-player id="video-player" style="width:100%;height:100%"
-                    poster="./assets/crude_otto.png"></video>
-            </div>
-            <div id="error_code" style="display:none;"></div>
-            <br><br>
+        <div class="body-wide" data_test_automation_id="video_playback_text" <p>
+            This is for video playback with subtitles/captions tracks
+            <br>
+            <br>
+            Below you will find both a DASH and HLS encrypted stream containing multiple subtitles/captions tracks
+            (represented by language) both being fetched via URL
+            <br>
+            In order to load the video, simply click on the corresponding poster
+            image.
+            <br>
+            <br>
+            Player settings can be found under the asset posters
+        </div>
+        </p>
         </div>
 
-        <div class="container">
-            <input type="checkbox" id="log_variants" onclick='         
-                    function myFunction() {
-                    // Get the checkbox
-                    var checkBox = document.getElementById("log_variants");
-                    // Get the output text
-                    var text = document.getElementById("text");
-                    var initialText = document.getElementById("initial_text");
-
-                    // If the checkbox is checked, display the output text
-                    if (checkBox.checked == true) {
-                        text.style.display = "block";
-                        initialText.style.display = "none";
-                        player.addEventListener("adaptation", onAdaptationChange);
-                        player.addEventListener("variantchanged", onAdaptationChange);
-                    } 
-                    }
-                    function onAdaptationChange(event) {
-                    var tracks = player.getVariantTracks();
-                    for (i = 0; i < tracks.length; i++) {
-                        if (tracks[i].active) {
-                        console.log("Bandwidth: " + tracks[i].bandwidth);
-                        console.log("Variant ID: " + tracks[i].id);
-                        break;
-                        }
-                    }
-                    }
-                    myFunction();'>
-            <div data_test_automation_id="variant_console_log_btn" value="Click to see variant changes">
-                <a id="initial_text" style="display:block"> Check box to log variant changes in console </a>
-                <a id="text" style="display:none">Logging variant changes - Refresh page to disable</a>
-
-            </div>
+        <div data-shaka-player-container id="video-container">
+            <video autoplay data-shaka-player id="video-player" style="width:100%;height:100%"
+                poster="./assets/crude_otto.png"></video>
         </div>
+        <div id="error_code" style="display:none;"></div>
+        <br><br>
 
-        <div class="container">
-            <fieldset>
-                <div class="row">
-                    <div class="column-2">
-                        <img src="./assets/mpeg-dash-poster.jpg" style="width: 150px" class="center"
-                            onClick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-rfc5646.ism/.mpd"); document.getElementById("error_code").style.display="none"'
-                            data_test_automation_id="subs-captions-dash-button" value="Subtitles/captions (DASH-VoD)"
-                            title="Subs/Captions (DASH)">
-                    </div>
-                    <div class="column-2">
-                        <img src="./assets/apple_hls_poster.jpg" style="width: 140px" class="centre"
-                            onClick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-rfc5646.ism/.m3u8"); document.getElementById("error_code").style.display="none"'
-                            data_test_automation_id="subs-captions-hls-button" value="Subtitles/captions (HLS-VoD)"
-                            title="Subs/Captions (HLS)">
-                    </div>
+        <fieldset>
+            <div class="row">
+                <div class="column-2">
+                    <img src="./assets/mpeg-dash-poster.jpg" style="width: 150px" class="center"
+                        onClick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-rfc5646.ism/.mpd"); document.getElementById("error_code").style.display="none"'
+                        data_test_automation_id="subs-captions-dash-button" value="Subtitles/captions (DASH-VoD)"
+                        title="Subs/Captions (DASH)">
                 </div>
+                <div class="column-2">
+                    <img src="./assets/apple_hls_poster.jpg" style="width: 140px" class="centre"
+                        onClick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-rfc5646.ism/.m3u8"); document.getElementById("error_code").style.display="none"'
+                        data_test_automation_id="subs-captions-hls-button" value="Subtitles/captions (HLS-VoD)"
+                        title="Subs/Captions (HLS)">
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="settings" data_test_automation_id="player_settings">
+            Player Settings
+            <fieldset>
+                <%- include("../../partials/global-player-settings") %>
             </fieldset>
         </div>
+
+        <br><br>
 
         <form action="/video-playback-index">
             <input data_test_automation_id="playback-asset-index-button" type="submit" class="ghost-button"

@@ -21,143 +21,75 @@
 
     <main>
 
-
-        <div class="container">
-            <div data_test_automation_id="video_playback_heading">
-                <h2>Video Playback - Widevine DRM Cookie Auth</h2>
-            </div>
-
-            <div class="body-wide" data_test_automation_id="video_playback_text" <p>
-                Below you will find a Widevine DRM encrypted video asset, with cookie authentication and served from a
-                URL (Tears of Steel), that you can load into the player.
-                <br>
-                <br>
-                In order to load the video, simply click on the poster image.
-                </p>
-            </div>
+        <div data_test_automation_id="video_playback_heading">
+            <h2>Video Playback - Widevine DRM Cookie Auth</h2>
         </div>
 
-        <div class="container">
-            <div data-shaka-player-container id="video-container">
-                <video autoplay data-shaka-player id="video-player" style="width:100%;height:100%"
-                    poster="./assets/crude_otto.png"></video>
-            </div>
-            <div id="error_code" style="display:none;"></div>
+        <div class="body-wide" data_test_automation_id="video_playback_text" <p>
+            Below you will find 3 Widevine DRM encrypted video assets, with cookie authentication and served from
+            different URLs, that you can load into the player. One of them has DRM key rotation.
+            <br>
+            <br>
+            In order to load the video, simply click on the poster image.
             <br><br>
+            In order to enable video playback you must set the cookie correctly in the player settings below . This will
+            open a new tab and store the cookie as needed. You can also delete the cookie from the player settings.
+            This will also open a new tab and delete the cookie that was stored.
+            </p>
         </div>
 
-        <!-- <div class="container">
-            <div class="ghost-button" data_test_automation_id="set_cookie_btn" value="Set DRM Cookie" onClick='
-                        document.getElementById("set_cookie").checked = true;
-                        function myFunction() {
-                        // Get the checkbox
-                        var checkBox = document.getElementById("set_cookie");
-                        // Get the output text
-                        var text = document.getElementById("text");
-
-                        // If the checkbox is checked, display the output text
-                        if (checkBox.checked == true) {
-                            text.style.display = "block";
-                        } else {
-                            text.style.display = "none";
-                        }
-                        }
-
-                        function setCookie(name,value,) {
-                            var expires = "Session";
-                            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
-                        }
-                        setCookie("CWIP-Auth-Cookie", "VGhpc0lzQVRlc3QK")'>
-                Click to set DRM cookie
-
-                <input type="checkbox" id="set_cookie" onclick='
-                function myFunction() {
-                    // Get the checkbox
-                    var checkBox = document.getElementById("set_cookie");
-                    // Get the output text
-                    var text = document.getElementById("set_text");
-                  
-                    // If the checkbox is checked, display the output text
-                    if (checkBox.checked == true){
-                      text.style.display = "block";
-                    } else {
-                      text.style.display = "none";
-                    }
-                  } myFunction()'>
-
-                <a id="set_text" style="display:none">DRM Cookie stored</a>
-            </div>
+        <div data-shaka-player-container id="video-container">
+            <video autoplay data-shaka-player id="video-player" style="width:100%;height:100%"
+                poster="./assets/crude_otto.png"></video>
         </div>
+        <div id="error_code" style="display:none;"></div>
+        <br><br>
 
-        <div class="container">
-            <div class="ghost-button" data_test_automation_id="delete_cookie_btn" value="Delete DRM Cookie" onClick='
-                        document.getElementById("delete_cookie").checked = true;
-                        function myFunction() {
-                        // Get the checkbox
-                        var checkBox = document.getElementById("delete_cookie");
-                        // Get the output text
-                        var text = document.getElementById("text");
-
-                        // If the checkbox is checked, display the output text
-                        if (checkBox.checked == true) {
-                            text.style.display = "block";
-                        } else {
-                            text.style.display = "none";
-                        }
-                        }
-                        function eraseCookie(name) {   
-                            document.cookie = name +"=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
-                        }
-                        
-                        eraseCookie("CWIP-Auth-Cookie")'>
-                Click to Delete DRM cookie
-
-                <input type="checkbox" id="delete_cookie" onclick='
-                function myFunction() {
-                    // Get the checkbox
-                    var checkBox = document.getElementById("delete_cookie");
-                    // Get the output text
-                    var text = document.getElementById("delete_text");
-                  
-                    // If the checkbox is checked, display the output text
-                    if (checkBox.checked == true){
-                      text.style.display = "block";
-                    } else {
-                      text.style.display = "none";
-                    }
-                  } myFunction()'>
-
-                <a id="delete_text" style="display:none">DRM Cookie </a>
-            </div>
-        </div> -->
-
-        <div class="container">
-            <fieldset>
-                <div class="row">
-                    <div class="column-3">
-                        <img src="./assets/tears-of-steel-poster.jpg" style="width: 152px" class="center"
-                            onClick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-dash-widevine.ism/.mpd"); document.getElementById("error_code").style.display="none"'
-                            data_test_automation_id="tears-of-steel-wv-button" value="Load Tears of Steel (DRM)"
-                            title="Load Tears of Steel (DRM)">
-                    </div>
-                    <div class="column-3">
-                        <img src="./assets/sintel-poster.jpg" style="width: 150px" class="center"
-                            onClick='loadPlayer("https://storage.googleapis.com/shaka-demo-assets/sintel-widevine/dash.mpd"); document.getElementById("error_code").style.display="none"'
-                            data_test_automation_id="sintel-wv-button" value="Load Sintel (DRM)"
-                            title="Load Sintel (DRM)">
-                    </div>
-                    <div class="column-3">
-                        <img src="./assets/caminandes-llamigos-poster.jpg" style="width: 150px" class="center"
-                            onClick='loadPlayer("https://smoula.net/data/wv-enc-test/llama-wv-rotation.mpd"); document.getElementById("error_code").style.display="none"'
-                            data_test_automation_id="sintel-wv-button" value="Load Sintel (DRM)"
-                            title="Load Sintel (DRM)">
-                    </div>
+        <fieldset>
+            <div class="row">
+                <div class="column-3">
+                    <img src="./assets/tears-of-steel-poster.jpg" style="width: 152px" class="center"
+                        onClick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-dash-widevine.ism/.mpd"); document.getElementById("error_code").style.display="none"'
+                        data_test_automation_id="tears-of-steel-wv-button" value="Load Tears of Steel (DRM)"
+                        title="Load Tears of Steel (DRM)">
                 </div>
-        </div>
+                <div class="column-3">
+                    <img src="./assets/sintel-poster.jpg" style="width: 150px" class="center"
+                        onClick='loadPlayer("https://storage.googleapis.com/shaka-demo-assets/sintel-widevine/dash.mpd"); document.getElementById("error_code").style.display="none"'
+                        data_test_automation_id="sintel-wv-button" value="Load Sintel (DRM)" title="Load Sintel (DRM)">
+                </div>
+                <div class="column-3">
+                    <img src="./assets/caminandes-llamigos-poster.jpg" style="width: 160px" class="center"
+                        onClick='loadPlayer("https://smoula.net/data/wv-enc-test/llama-wv-rotation.mpd"); document.getElementById("error_code").style.display="none"'
+                        data_test_automation_id="sintel-wv-button" value="Load Sintel (DRM)" title="Load Sintel (DRM)">
+                </div>
+            </div>
+            </div>
         </fieldset>
+
+        <div class="settings" data_test_automation_id="player_settings">
+            Player Settings
+            <fieldset>
+                <%- include("../../../../partials/global-player-settings") %>
+                    <div class="column-2" data_test_automation_id="page_specific_settings">
+                        <form action="http://cwip-shaka-proxy.appspot.com/set_cookie" target="_blank"
+                            data_test_automation_id="set_cookie_btn">Set DRM Cookie
+                            <button>
+                                Set cookie
+                            </button>
+                        </form>
+                        <br>
+                        <form action="http://cwip-shaka-proxy.appspot.com/delete_cookie" target="_blank"
+                            data_test_automation_id="delete_cookie_btn"> Delete DRM Cookie
+                            <button>
+                                Delete cookie
+                            </button>
+                        </form>
+                    </div>
+            </fieldset>
         </div>
 
-
+        <br><br>
 
         <form action="/video-playback-drm-index">
             <input data_test_automation_id="playback-asset-drm-index-button" type="submit" class="ghost-button"
