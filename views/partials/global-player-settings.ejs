@@ -9,25 +9,35 @@
 
         <div data_test_automation_id="current_variant">See current variant
             <button onclick='function currentVariant() {
-                        player.addEventListener("adaptation", onAdaptationChange);
-                        player.addEventListener("variantchanged", onAdaptationChange);
-                        document.getElementById("current_variant_container").style.display = "block";
-                        document.getElementById("current_variant").style.display = "block";
-                        onAdaptationChange()
-                    }
-                    function onAdaptationChange(event) {
-                    var tracks = player.getVariantTracks();
-                    for (i = 0; i < tracks.length; i++) {
-                        if (tracks[i].active) {
-                        console.log("Bandwidth: " + tracks[i].bandwidth);
-                        console.log("Variant ID: " + tracks[i].id);
-                        let divText = "Current Variant ID: " + tracks[i].id + "\n" + "Current Bandwidth: " + tracks[i].bandwidth
-                        document.getElementById("current_variant").innerText = divText;
-                        break;
-                        }
-                    }
-                    }
-                    currentVariant();'>
+                player.addEventListener("adaptation", onAdaptationChange);
+                player.addEventListener("variantchanged", onAdaptationChange);
+                player.addEventListener("error", playerErrorVariantCheck);
+                document.getElementById("current_variant_container").style.display = "block";
+                document.getElementById("current_variant").style.display = "block";
+                onAdaptationChange();
+              }
+              function onAdaptationChange(event) {
+                var tracks = player.getVariantTracks();
+                for (i = 0; i < tracks.length; i++) {
+                  if (tracks[i].active) {
+                    console.log("Bandwidth: " + tracks[i].bandwidth);
+                    console.log("Variant ID: " + tracks[i].id);
+                    let divText =
+                      "Current Variant ID: " +
+                      tracks[i].id +
+                      "\n" +
+                      "Current Bandwidth: " +
+                      tracks[i].bandwidth;
+                    document.getElementById("current_variant").innerText = divText;
+                    break;
+                  }
+                }
+              }
+              function playerErrorVariantCheck(event) {
+                document.getElementById("current_variant").innerText =
+                  "PLAYER ERROR: CHECK ERROR CODE";
+              }
+              currentVariant();'>
                 See current variant
             </button>
             <div class="info" id="current_variant_container" style="display:none">
@@ -41,6 +51,7 @@
             <button onclick='function availableVariants() {
                 player.addEventListener("adaptation", onAssetChange);
                 player.addEventListener("variantchanged", onAssetChange);
+                player.addEventListener("error", playerErrorVariantCheck);
                 document.getElementById("available_variant_list").style.display = "block";
                 document.getElementById("variant_list_container").style.display = "block";
                 onAssetChange();
@@ -63,6 +74,11 @@
                 ).innerText = variant_list.join("");
                 document.getElementById("available_variant_list").style.display = "block";
                 document.getElementById("variant_list_container").style.display = "block";
+              }
+              
+              function playerErrorVariantCheck(event) {
+                document.getElementById("available_variant_list").innerText =
+                  "PLAYER ERROR: CHECK ERROR CODE";
               }
               availableVariants();'>
                 See variants
