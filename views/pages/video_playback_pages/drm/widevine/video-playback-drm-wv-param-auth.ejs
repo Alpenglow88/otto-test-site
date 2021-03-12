@@ -21,57 +21,60 @@
 
     <main>
 
-
-        <div class="container">
-            <div data_test_automation_id="video_playback_heading">
-                <h2>Video Playback - Widevine DRM Parameter Auth</h2>
-            </div>
-
-            <div class="body-wide" data_test_automation_id="video_playback_text" <p>
-                Below you will find a Widevine DRM encrypted video asset, with parameter authentication and served from
-                different URLs, that you can load into the player. One of them has DRM key rotation.
-                <br>
-                <br>
-                In order to load the video, simply click on the poster image.
-                </p>
-            </div>
+        <div data_test_automation_id="video_playback_heading">
+            <h2>Video Playback - Widevine DRM Parameter Auth</h2>
         </div>
 
-        <div class="container">
-            <div data-shaka-player-container id="video-container">
-                <video autoplay data-shaka-player id="video-player" style="width:100%;height:100%"
-                    poster="./assets/crude_otto.png"></video>
-            </div>
-            <div id="error_code" style="display:none;"></div>
-            <br><br>
+        <div class="body-wide" data_test_automation_id="video_playback_text" <p>
+            Below you will find 3 Widevine DRM encrypted video assets, with parameter authentication and served from
+            different URLs, that you can load into the player. One of them has DRM key rotation.
+            <br>
+            <br>
+            In order to load the video, simply click on the poster image.
+            <br>
+            <br>
+            Player settings can be found under the asset posters
+            </p>
         </div>
 
-        <div class="container">
-            <fieldset>
-                <div class="row">
-                    <div class="column-3">
-                        <img src="./assets/tears-of-steel-poster.jpg" style="width: 152px" class="center"
-                            onClick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-dash-widevine.ism/.mpd"); document.getElementById("error_code").style.display="none"'
-                            data_test_automation_id="tears-of-steel-wv-button" value="Load Tears of Steel (DRM)"
-                            title="Load Tears of Steel (DRM)">
-                    </div>
-                    <div class="column-3">
-                        <img src="./assets/sintel-poster.jpg" style="width: 150px" class="center"
-                            onClick='loadPlayer("https://storage.googleapis.com/shaka-demo-assets/sintel-widevine/dash.mpd"); document.getElementById("error_code").style.display="none"'
-                            data_test_automation_id="sintel-wv-button" value="Load Sintel (DRM)"
-                            title="Load Sintel (DRM)">
-                    </div>
-                    <div class="column-3">
-                        <img src="./assets/caminandes-llamigos-poster.jpg" style="width: 160px" class="center"
-                            onClick='loadPlayer("https://smoula.net/data/wv-enc-test/llama-wv-rotation.mpd"); document.getElementById("error_code").style.display="none"'
-                            data_test_automation_id="caminandes-wv-button" value="Load Caminandes (DRM)"
-                            title="Load Caminandes (DRM)">
-                    </div>
+        <div data-shaka-player-container id="video-container">
+            <video autoplay data-shaka-player id="video-player" style="width:100%;height:100%"
+                poster="./assets/crude_otto.png"></video>
+        </div>
+        <div id="error_code" style="display:none;"></div>
+        <br><br>
+
+        <fieldset>
+            <div class="row">
+                <div class="column-3">
+                    <img src="./assets/tears-of-steel-poster.jpg" style="width: 152px" class="center"
+                        onClick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-dash-widevine.ism/.mpd"); document.getElementById("error_code").style.display="none"'
+                        data_test_automation_id="tears-of-steel-wv-button" value="Load Tears of Steel (DRM)"
+                        title="Load Tears of Steel (DRM)">
                 </div>
-        </div>
+                <div class="column-3">
+                    <img src="./assets/sintel-poster.jpg" style="width: 150px" class="center"
+                        onClick='loadPlayer("https://storage.googleapis.com/shaka-demo-assets/sintel-widevine/dash.mpd"); document.getElementById("error_code").style.display="none"'
+                        data_test_automation_id="sintel-wv-button" value="Load Sintel (DRM)" title="Load Sintel (DRM)">
+                </div>
+                <div class="column-3">
+                    <img src="./assets/caminandes-llamigos-poster.jpg" style="width: 160px" class="center"
+                        onClick='loadPlayer("https://smoula.net/data/wv-enc-test/llama-wv-rotation.mpd"); document.getElementById("error_code").style.display="none"'
+                        data_test_automation_id="caminandes-wv-button" value="Load Caminandes (DRM)"
+                        title="Load Caminandes (DRM)">
+                </div>
+            </div>
+            </div>
         </fieldset>
+
+        <div class="settings" data_test_automation_id="player_settings">
+            Player Settings
+            <fieldset>
+                <%- include("../../../../partials/global-player-settings") %>
+            </fieldset>
         </div>
 
+        <br><br>
 
 
         <form action="/video-playback-drm-index">

@@ -14,28 +14,22 @@
   </header>
 
   <main>
-
-    <div class="container">
-      <fieldset>
-        <div data_test_automation_id="text_entry_field_information_heading">
-          <h1>Text entry field with placeholder text</h1>
-        </div>
-        <div data_test_automation_id="text_entry_field_information_text"
-          <p>Below is a text entry field complete with placeholder text. Use this to verify both text entry as well as the text that is used the placeholder
-            <br>
-            <br>
-            There is also a submit button which can be used to verify correct behaviour on submission of text. This button will simply open a "Success!" page along with the text that you have entered in the text entry field
-          </p>
-        </div>
-        <form action="/success-text-entry" method="post">
-          <input data_test_automation_id="text-entry-field" name="text_entry" type="text" class="ghost-input"
-            placeholder="Text Entry Field Placeholder Text" required>
-          <input data_test_automation_id="submit-button" type="submit" class="ghost-button" value="Submit text entry value">
-        </form>
-      </fieldset>
+    <div data_test_automation_id="text_entry_field_information_heading">
+      <h1>Text entry field with placeholder text</h1>
     </div>
-
-
+    <div data_test_automation_id="text_entry_field_information_text" <p>Below is a text entry field complete with
+      placeholder text. Use this to verify both text entry as well as the text that is used the placeholder
+      <br>
+      <br>
+      There is also a submit button which can be used to verify correct behaviour on submission of text. This button
+      will simply open a "Success!" page along with the text that you have entered in the text entry field
+      </p>
+    </div>
+    <form action="/success-text-entry" method="post">
+      <input data_test_automation_id="text-entry-field" name="text_entry" type="text" class="ghost-input"
+        placeholder="Text Entry Field Placeholder Text" required>
+      <input data_test_automation_id="submit-button" type="submit" class="ghost-button" value="Submit text entry value">
+    </form>
 
   </main>
 

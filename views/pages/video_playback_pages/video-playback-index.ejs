@@ -21,125 +21,15 @@
 
     <main>
 
-
-        <div class="container">
             <div data_test_automation_id="video_playback_heading">
                 <h2>Video Playback Full Asset Index</h2>
             </div>
 
             <div class="body-wide" data_test_automation_id="video_playback_text" <p>
                 <br>
-                This page implements a full Shaka player with all of the available assets listed below.
-                <br>
-                There are also several checkboxes on this page that will allow you to verify player behaviour for each
-                asset (such as logging the variant changes to the console) which can be used to see what each asset is
-                outputting during your testing
+                This page lists the details of all available video assets and where they can be found within the site
                 </p>
             </div>
-        </div>
-
-        <div class="container">
-            <div data-shaka-player-container id="video-container">
-                <video autoplay data-shaka-player id="video-player" style="width:100%;height:100%"
-                    poster="./assets/crude_otto.png"></video>
-            </div>
-            <div id="error_code" style="display:none;"></div>
-            <br><br>
-        </div>
-
-        <div class="container">
-            <input type="checkbox" id="log_variants" onclick='         
-                    function myFunction() {
-                    // Get the checkbox
-                    var checkBox = document.getElementById("log_variants");
-                    // Get the output text
-                    var text = document.getElementById("text");
-                    var initialText = document.getElementById("initial_text");
-
-                    // If the checkbox is checked, display the output text
-                    if (checkBox.checked == true) {
-                        text.style.display = "block";
-                        initialText.style.display = "none";
-                        player.addEventListener("adaptation", onAdaptationChange);
-                        player.addEventListener("variantchanged", onAdaptationChange);
-                    } 
-                    }
-                    function onAdaptationChange(event) {
-                    var tracks = player.getVariantTracks();
-                    for (i = 0; i < tracks.length; i++) {
-                        if (tracks[i].active) {
-                        console.log("Bandwidth: " + tracks[i].bandwidth);
-                        console.log("Variant ID: " + tracks[i].id);
-                        break;
-                        }
-                    }
-                    }
-                    myFunction();'>
-            <div data_test_automation_id="variant_console_log_btn" value="Click to see variant changes">
-                <a id="initial_text" style="display:block"> Check box to log variant changes in console </a>
-                <a id="text" style="display:none">Logging variant changes - Refresh page to disable</a>
-
-            </div>
-        </div>
-
-        <div class="container">
-            <fieldset>
-                <h2>Assets</h2>
-                <input
-                    onClick='loadPlayer("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"); document.getElementById("error_code").style.display="none"'
-                    data_test_automation_id="sintel-mp4-button" type="submit" class="ghost-button"
-                    value="Load Sintel (MP4-VoD)" title="Load Sintel MP4">
-                <input
-                    onClick='loadPlayer("./assets/big_buck_bunny_local.mp4"); document.getElementById("error_code").style.display="none"'
-                    data_test_automation_id="big-buck-bunny-mp4-button" type="submit" class="ghost-button"
-                    value="Load Big Buck Bunny (MP4-VoD)" title="Load Big Buck Bunny MP4">
-                <br><br>
-                <input
-                    onClick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel.ism/.mpd"); document.getElementById("error_code").style.display="none"'
-                    data_test_automation_id="tears-of-steel-dash-button" type="submit" class="ghost-button"
-                    value="Load Tears of Steel (DASH-VoD)" title="Load Tears of Steel (DASH)">
-                <input
-                    onClick='loadPlayer("https://storage.googleapis.com/shaka-demo-assets/sintel/dash.mpd"); document.getElementById("error_code").style.display="none"'
-                    data_test_automation_id="sintel-dash-button" type="submit" class="ghost-button"
-                    value="Load Sintel (DASH-VoD)" title="Load Sintel (DASH)">
-                <br><br>
-                <input
-                    onClick='loadPlayer("https://multiplatform-f.akamaihd.net/i/multi/april11/sintel/sintel-hd_,512x288_450_b,640x360_700_b,768x432_1000_b,1024x576_1400_m,.mp4.csmil/master.m3u8"); document.getElementById("error_code").style.display="none"'
-                    data_test_automation_id="sintel-hls-button" type="submit" class="ghost-button"
-                    value="Load Sintel (HLS-VoD)" title="Load Sintel (HLS)">
-                <input
-                    onClick='loadPlayer("http://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel.ism/.m3u8"); document.getElementById("error_code").style.display="none"'
-                    data_test_automation_id="tears-of-steel-hls-button" type="submit" class="ghost-button"
-                    value="Load Tears of Steel (HLS-VoD)" title="Load Tears of Steel (HLS)">
-                <br><br>
-                <input
-                    onClick='loadPlayer("https://moctobpltc-i.akamaihd.net/hls/live/571329/eight/playlist.m3u8"); document.getElementById("error_code").style.display="none"'
-                    data_test_automation_id="live-hls-button" type="submit" class="ghost-button" value="Live (HLS)"
-                    title="Load Live (HLS-Live)">
-                <input
-                    onClick='loadPlayer("https://live.unified-streaming.com/scte35/scte35.isml/.mpd"); document.getElementById("error_code").style.display="none"'
-                    data_test_automation_id="live-dash-button" type="submit" class="ghost-button" value="Live (DASH)"
-                    title="Load Live (DASH-Live)">
-                <br><br>
-                <input
-                    onClick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-multi-lang.ism/.m3u8"); document.getElementById("error_code").style.display="none"'
-                    data_test_automation_id="multi-audio-lang-hls-button" type="submit" class="ghost-button"
-                    value="Multi Audio Language (HLS-VoD)" title="Load Multi Language (HLS)">
-                <input
-                    onClick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-multi-lang.ism/.mpd"); document.getElementById("error_code").style.display="none"'
-                    data_test_automation_id="multi-audio-lang-dash-button" type="submit" class="ghost-button"
-                    value="Multi Audio Language (DASH-VoD)" title="Load Multi Audio Language (DASH)">
-                <br><br>
-                <input
-                    onClick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-rfc5646.ism/.m3u8"); document.getElementById("error_code").style.display="none"'
-                    data_test_automation_id="subs-captions-hls-button" type="submit" class="ghost-button"
-                    value="Subtitles/captions (HLS-VoD)" title="Subs/Captions (HLS)">
-                <input
-                    onClick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-rfc5646.ism/.mpd"); document.getElementById("error_code").style.display="none"'
-                    data_test_automation_id="subs-captions-dash-button" type="submit" class="ghost-button"
-                    value="Subtitles/captions (DASH-VoD)" title="Subs/Captions (DASH)">
-            </fieldset>
-        </div>
 
 
     </main>
