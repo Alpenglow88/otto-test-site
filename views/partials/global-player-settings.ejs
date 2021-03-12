@@ -7,7 +7,7 @@
 
     <div data_test_automation_id="variant_logging">
 
-        <div data_test_automation_id="current_variant">See current variant
+        <div data_test_automation_id="current_variant">Current Variant
             <button onclick='function currentVariant() {
                 player.addEventListener("adaptation", onAdaptationChange);
                 player.addEventListener("variantchanged", onAdaptationChange);
@@ -38,7 +38,7 @@
                   "PLAYER ERROR: CHECK ERROR CODE";
               }
               currentVariant();'>
-                See current variant
+                Show
             </button>
             <div class="info" id="current_variant_container" style="display:none">
                 <a id="current_variant" style="display:none"></a>
@@ -47,7 +47,7 @@
 
         <br>
 
-        <div data_test_automation_id="available_variants">See available variants
+        <div data_test_automation_id="available_variants">Available Variants
             <button onclick='function availableVariants() {
                 player.addEventListener("adaptation", onAssetChange);
                 player.addEventListener("variantchanged", onAssetChange);
@@ -81,7 +81,7 @@
                   "PLAYER ERROR: CHECK ERROR CODE";
               }
               availableVariants();'>
-                See available variants
+                Show
             </button>
             <div class="info" id="variant_list_container" style="display:none">
                 <a id="available_variant_list" style="display:none"></a>
