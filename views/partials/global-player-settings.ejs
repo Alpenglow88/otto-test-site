@@ -1,34 +1,76 @@
 <div class="column-2" data_test_automation_id="global_player_settings">
-    (R) = Refresh required to unset<br><br>
-    <form data_test_automation_id="variant_logging">
-        <a id="initial_text" style="display:block"> Log variant changes in console (R)</a>
-        <a id="text" style="display:none">Logging variant changes</a>
-        <input type="checkbox" id="log_variants" onclick='         
-    function myFunction() {
-    // Get the checkbox
-    var checkBox = document.getElementById("log_variants");
-    // Get the output text
-    var text = document.getElementById("text");
-    var initialText = document.getElementById("initial_text");
+    <div data_test_automation_id="currently_playing">
+        <a id="currently_playing_text"> Currently Playing: N/A</a>
+    </div>
 
-    // If the checkbox is checked, display the output text
-    if (checkBox.checked == true) {
-        text.style.display = "block";
-        initialText.style.display = "none";
-        player.addEventListener("adaptation", onAdaptationChange);
-        player.addEventListener("variantchanged", onAdaptationChange);
-    } 
-    }
-    function onAdaptationChange(event) {
-    var tracks = player.getVariantTracks();
-    for (i = 0; i < tracks.length; i++) {
-        if (tracks[i].active) {
-        console.log("Bandwidth: " + tracks[i].bandwidth);
-        console.log("Variant ID: " + tracks[i].id);
-        break;
-        }
-    }
-    }
-    myFunction();'>
-    </form>
+    <br>
+
+    <div data_test_automation_id="variant_logging">
+
+        <div data_test_automation_id="current_variant">See current variant
+            <button onclick='function currentVariant() {
+                        player.addEventListener("adaptation", onAdaptationChange);
+                        player.addEventListener("variantchanged", onAdaptationChange);
+                        document.getElementById("current_variant_container").style.display = "block";
+                        document.getElementById("current_variant").style.display = "block";
+                        onAdaptationChange()
+                    }
+                    function onAdaptationChange(event) {
+                    var tracks = player.getVariantTracks();
+                    for (i = 0; i < tracks.length; i++) {
+                        if (tracks[i].active) {
+                        console.log("Bandwidth: " + tracks[i].bandwidth);
+                        console.log("Variant ID: " + tracks[i].id);
+                        let divText = "Current Variant ID: " + tracks[i].id + "\n" + "Current Bandwidth: " + tracks[i].bandwidth
+                        document.getElementById("current_variant").innerText = divText;
+                        break;
+                        }
+                    }
+                    }
+                    currentVariant();'>
+                See current variant
+            </button>
+            <div class="info" id="current_variant_container" style="display:none">
+                <a id="current_variant" style="display:none"></a>
+            </div>
+        </div>
+
+        <br>
+
+        <div data_test_automation_id="available_variants">See available variants
+            <button onclick='function availableVariants() {
+                player.addEventListener("adaptation", onAssetChange);
+                player.addEventListener("variantchanged", onAssetChange);
+                document.getElementById("available_variant_list").style.display = "block";
+                document.getElementById("variant_list_container").style.display = "block";
+                onAssetChange();
+              }
+              function onAssetChange(event) {
+                let variant_list = [];
+                let tracks = player.getVariantTracks();
+                for (let x = 0; x < tracks.length; x++) {
+                  variant_list.push(
+                    "Variant ID " +
+                      tracks[x].id +
+                      " : " +
+                      "Bandwidth " +
+                      tracks[x].bandwidth +
+                      "\n"
+                  );
+                }
+                document.getElementById(
+                  "available_variant_list"
+                ).innerText = variant_list.join("");
+                document.getElementById("available_variant_list").style.display = "block";
+                document.getElementById("variant_list_container").style.display = "block";
+              }
+              availableVariants();'>
+                See variants
+            </button>
+            <div class="info" id="variant_list_container" style="display:none">
+                <a id="available_variant_list" style="display:none"></a>
+            </div>
+        </div>
+
+    </div>
 </div>
