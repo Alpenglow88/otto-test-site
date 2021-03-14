@@ -48,13 +48,13 @@
             <div class="row">
                 <div class="column-2">
                     <img src="./assets/sintel-poster.jpg" style="width: 150px" class="center"
-                        onClick='loadPlayer("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"); document.getElementById("error_code").style.display="none"'
+                        onclick='loadPlayer("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"); document.getElementById("error_code").style.display="none"; document.getElementById("currently_playing_text").innerText = "Currently Playing: Sintel"'
                         data_test_automation_id="sintel-mp4-image" type="submit" value="Load Sintel (MP4-VoD)"
                         title="Load Sintel MP4">
                 </div>
                 <div class="column-2">
                     <img src="./assets/big-buck-bunny-poster.jpg" style="width: 160px" class="centre"
-                        onClick='loadPlayer("./assets/big_buck_bunny_local.mp4"); document.getElementById("error_code").style.display="none"'
+                        onclick='loadPlayer("./assets/big_buck_bunny_local.mp4"); document.getElementById("error_code").style.display="none"; document.getElementById("currently_playing_text").innerText = "Currently Playing: Big Buck Bunny"'
                         data_test_automation_id="big-buck-bunny-mp4-image" type="submit" class="ghost-button"
                         value="Load Big Buck Bunny (MP4-VoD)" title="Load Big Buck Bunny MP4">
                 </div>
@@ -62,7 +62,19 @@
             </div>
         </fieldset>
 
+        <div class="settings" data_test_automation_id="player_settings">
+            Player Settings and Stats
+            <fieldset>
+                <div class="column-2" data_test_automation_id="global_player_settings">
+                    <div data_test_automation_id="currently_playing">
+                        <a id="currently_playing_text"> Currently Playing: N/A</a>
+                    </div>
+                    <br>
+                </div>
+            </fieldset>
+        </div>
 
+        <br><br>
 
         <form action="/video-playback-index">
             <input data_test_automation_id="playback-asset-index-button" type="submit" class="ghost-button"
