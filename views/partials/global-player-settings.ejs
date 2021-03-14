@@ -1,14 +1,14 @@
 <div class="column-2" data_test_automation_id="global_player_settings">
-    <div data_test_automation_id="currently_playing">
-        <a id="currently_playing_text"> Currently Playing: N/A</a>
-    </div>
+  <div data_test_automation_id="currently_playing">
+    <a id="currently_playing_text"> Currently Playing: N/A</a>
+  </div>
 
-    <br>
+  <br>
 
-    <div data_test_automation_id="variant_logging">
+  <div data_test_automation_id="variant_logging">
 
-        <div data_test_automation_id="current_variant">Current Variant
-            <button onclick='function currentVariant() {
+    <div data_test_automation_id="current_variant">Current Variant
+      <button onclick='function currentVariant() {
                 player.addEventListener("adaptation", onAdaptationChange);
                 player.addEventListener("variantchanged", onAdaptationChange);
                 player.addEventListener("error", playerErrorVariantCheck);
@@ -38,17 +38,17 @@
                   "PLAYER ERROR: CHECK ERROR CODE";
               }
               currentVariant();'>
-                Show
-            </button>
-            <div class="info" id="current_variant_container" style="display:none">
-                <a id="current_variant" style="display:none"></a>
-            </div>
-        </div>
+        Show
+      </button>
+      <div class="info" id="current_variant_container" style="display:none">
+        <a id="current_variant" style="display:none"></a>
+      </div>
+    </div>
 
-        <br>
+    <br>
 
-        <div data_test_automation_id="available_variants">Available Variants
-            <button onclick='function availableVariants() {
+    <div data_test_automation_id="available_variants">Available Variants
+      <button onclick='function availableVariants() {
                 player.addEventListener("adaptation", onAssetChange);
                 player.addEventListener("variantchanged", onAssetChange);
                 player.addEventListener("error", playerErrorVariantCheck);
@@ -81,12 +81,12 @@
                   "PLAYER ERROR: CHECK ERROR CODE";
               }
               availableVariants();'>
-                Show
-            </button>
-            <div class="info" id="variant_list_container" style="display:none">
-                <a id="available_variant_list" style="display:none"></a>
-            </div>
-        </div>
-
+        Show
+      </button>
+      <div class="info" id="variant_list_container" style="display:none">
+        <a id="available_variant_list" style="display:none"></a>
+      </div>
     </div>
+
+  </div>
 </div>
