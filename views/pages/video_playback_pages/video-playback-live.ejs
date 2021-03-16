@@ -57,13 +57,13 @@
             <div class="row">
                 <div class="column-2">
                     <img src="./assets/mpeg-dash-poster.jpg" style="width: 150px" class="center"
-                        onClick='loadPlayer("https://live.unified-streaming.com/scte35/scte35.isml/.mpd"); document.getElementById("error_code").style.display="none"'
+                        onclick='loadPlayer("https://live.unified-streaming.com/scte35/scte35.isml/.mpd"); document.getElementById("error_code").style.display="none"; document.getElementById("currently_playing_text").innerText = "Currently Playing: LIVE TestCard"'
                         data_test_automation_id="live-dash-button" type="submit" class="ghost-button"
                         value="Live (DASH)" title="Load Live (DASH-Live)">
                 </div>
                 <div class="column-2">
                     <img src="./assets/apple_hls_poster.jpg" style="width: 140px" class="centre"
-                        onClick='loadPlayer("https://moctobpltc-i.akamaihd.net/hls/live/571329/eight/playlist.m3u8"); document.getElementById("error_code").style.display="none"'
+                        onclick='loadPlayer("https://moctobpltc-i.akamaihd.net/hls/live/571329/eight/playlist.m3u8"); document.getElementById("error_code").style.display="none"; document.getElementById("currently_playing_text").innerText = "Currently Playing: LIVE Conference Interview"'
                         data_test_automation_id="live-hls-button" type="submit" class="ghost-button" value="Live (HLS)"
                         title="Load Live (HLS-Live)">
                 </div>

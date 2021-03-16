@@ -54,13 +54,13 @@
             <div class="row">
                 <div class="column-2">
                     <img src="./assets/sintel-poster.jpg" style="width: 150px" class="center"
-                        onClick='loadPlayer("https://multiplatform-f.akamaihd.net/i/multi/april11/sintel/sintel-hd_,512x288_450_b,640x360_700_b,768x432_1000_b,1024x576_1400_m,.mp4.csmil/master.m3u8"); document.getElementById("error_code").style.display="none"'
+                        onclick='loadPlayer("https://multiplatform-f.akamaihd.net/i/multi/april11/sintel/sintel-hd_,512x288_450_b,640x360_700_b,768x432_1000_b,1024x576_1400_m,.mp4.csmil/master.m3u8"); document.getElementById("error_code").style.display="none"; document.getElementById("currently_playing_text").innerText = "Currently Playing: Sintel"'
                         data_test_automation_id="sintel-hls-button" type="submit" class="ghost-button"
                         value="Load Sintel (HLS-VoD)" title="Load Sintel (HLS)">
                 </div>
                 <div class="column-2">
                     <img src="./assets/tears-of-steel-poster.jpg" style="width: 152px" class="center"
-                        onClick='loadPlayer("http://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel.ism/.m3u8"); document.getElementById("error_code").style.display="none"'
+                        onclick='loadPlayer("http://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel.ism/.m3u8"); document.getElementById("error_code").style.display="none"; document.getElementById("currently_playing_text").innerText = "Currently Playing: Tears of Steel"'
                         data_test_automation_id="tears-of-steel-hls-button" type="submit" class="ghost-button"
                         value="Load Tears of Steel (HLS-VoD)" title="Load Tears of Steel (HLS)">
                 </div>

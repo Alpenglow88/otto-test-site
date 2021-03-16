@@ -52,13 +52,13 @@
             <div class="row">
                 <div class="column-2">
                     <img src="./assets/mpeg-dash-poster.jpg" style="width: 150px" class="center"
-                        onClick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-rfc5646.ism/.mpd"); document.getElementById("error_code").style.display="none"'
+                        onclick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-rfc5646.ism/.mpd"); document.getElementById("error_code").style.display="none"; document.getElementById("currently_playing_text").innerText = "Currently Playing: Tears of Steel (DASH)"'
                         data_test_automation_id="subs-captions-dash-button" value="Subtitles/captions (DASH-VoD)"
                         title="Subs/Captions (DASH)">
                 </div>
                 <div class="column-2">
                     <img src="./assets/apple_hls_poster.jpg" style="width: 140px" class="centre"
-                        onClick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-rfc5646.ism/.m3u8"); document.getElementById("error_code").style.display="none"'
+                        onclick='loadPlayer("https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-rfc5646.ism/.m3u8"); document.getElementById("error_code").style.display="none"; document.getElementById("currently_playing_text").innerText = "Currently Playing: Tears of Steel (HLS)"'
                         data_test_automation_id="subs-captions-hls-button" value="Subtitles/captions (HLS-VoD)"
                         title="Subs/Captions (HLS)">
                 </div>
